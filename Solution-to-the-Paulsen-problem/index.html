@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"www.yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="今年STOC上的一篇会议论文 ，这是参照作者Lap Chi Lau在IAS上演讲所做的记录。">
@@ -208,106 +208,125 @@
       
         <p>今年STOC上的一篇会议论文 ，这是参照作者Lap Chi Lau在IAS上演讲所做的记录。</p>
 <a id="more"></a>
-
-<h3 id="Part-I-Paulsen-problem"><a href="#Part-I-Paulsen-problem" class="headerlink" title="Part I:Paulsen problem"></a>Part I:Paulsen problem</h3><ul>
+<h3 id="part-ipaulsen-problem">Part I:Paulsen problem</h3>
+<ul>
 <li>Motivation from frame theory</li>
 </ul>
-<h5 id="Frame"><a href="#Frame" class="headerlink" title="Frame"></a>Frame</h5><p>Frame: a collection of vectors $u_1,u_2,…,u_n \in R^d$ that spans $R^d.$</p>
-<p>Equal norm: if $|u_i|_2 = |u_j|_2$for all  $i, j$  <code>which is means same length.</code> </p>
-<p>Parseval: if $\sum\limits_{i=1}^nu_iu_i^T = I_d$.</p>
-<p>从另一个角度来解释:<br>$$<br>C\cdot|x|^2\le\sum_{j\in\rm II}|\langle x,f_j\rangle|^2\le D\cdot|x|^2<br>$$</p>
+<h5 id="frame">Frame</h5>
+<p>Frame: a collection of vectors <span class="math inline">\(u_1,u_2,...,u_n \in R^d\)</span> that spans <span class="math inline">\(R^d.\)</span></p>
+<p>Equal norm: if <span class="math inline">\(\|u_i\|_2 = \|u_j\|_2\)</span>for all <span class="math inline">\(i, j\)</span> <code>which is means same length.</code></p>
+<p>Parseval: if <span class="math inline">\(\sum\limits_{i=1}^nu_iu_i^T = I_d\)</span>.</p>
+<p>从另一个角度来解释: <span class="math display">\[
+C\cdot\|x\|^2\le\sum_{j\in\rm II}|\langle x,f_j\rangle|^2\le D\cdot\|x\|^2
+\]</span></p>
 <p>存在一组基，对于任意一个向量x，这组基向x做投影的长度的平方和，介于x的模长的平方的常数倍（大于零）之间。</p>
-<p>An equal norm Parseval frame is an overcomplete basis:<br>$$<br>\sum\limits_{i=1}^n\langle x,u_i\rangle u_i = x\quad\forall x \in R^d<br>$$</p>
+<p>An equal norm Parseval frame is an overcomplete basis: <span class="math display">\[
+\sum\limits_{i=1}^n\langle x,u_i\rangle u_i = x\quad\forall x \in R^d
+\]</span></p>
 <blockquote>
 <p>任何向量x可以由一frame（n个d维向量）来表示。</p>
 </blockquote>
-<p><code>当n=d时，这是一组标准基，当n远大于d时，称为“overcomplete basis”</code> </p>
+<p><code>当n=d时，这是一组标准基，当n远大于d时，称为“overcomplete basis”</code></p>
 <blockquote>
 <p><code>思考:</code></p>
-<p>overcomplete basis：这组基是过完备的，当你拿掉一个vector时，仍然可以通过改变系数来表示出R^d^中的任意vector。</p>
+<p>overcomplete basis：这组基是过完备的，当你拿掉一个vector时，仍然可以通过改变系数来表示出R<sup>d</sup>中的任意vector。</p>
 <p>The application of equal norm Parseval frame : 比如用在信号处理上，信息压缩；frame中的每个vector的系数记录了某些信息，当某个系数丢失了，我们仍然可以得到原本的信息。</p>
 </blockquote>
 <p><em>It has applications in signal processing, communication theory, and quantum information theory.</em></p>
-<h5 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h5><p>Equal norm Parseval frames are difficult to construct with only a few known algebraic constructions.</p>
-<p>examples:[Holmes-Paulsen 04] Grassmaniann frames: equal norm Parseval frames with minimal $\max\limits_{i,j}{\langle u_i,u_j\rangle}^2$ which are even more difficult to construct.</p>
+<h5 id="motivation">Motivation</h5>
+<p>Equal norm Parseval frames are difficult to construct with only a few known algebraic constructions.</p>
+<p>examples:[Holmes-Paulsen 04] Grassmaniann frames: equal norm Parseval frames with minimal <span class="math inline">\(\max\limits_{i,j}{\langle u_i,u_j\rangle}^2\)</span> which are even more difficult to construct.</p>
 <blockquote>
 <p>这里是指，在所有equal norm parseval frames中,其最大内积是所有frames中最小的，又被称作:Grassmaniann frams.</p>
 </blockquote>
-<p>It is easier to construct “approximate” equal norm Parseval frames(e.g. random unit vectors, optimal packing of lines).</p>
-<p><strong>Question:</strong>Can we turn an “approximate” frame into an equal norm Parseval frame by just moving the vectors “slightly”?</p>
+<p>It is easier to construct "approximate" equal norm Parseval frames(e.g. random unit vectors, optimal packing of lines).</p>
+<p><strong>Question:</strong>Can we turn an "approximate" frame into an equal norm Parseval frame by just moving the vectors "slightly"?</p>
 <blockquote>
 <p><code>总结：</code></p>
 <p>很难构建equal norm Parseval frame，但很容易构建<code>近似</code>equal norm Parseval frame.</p>
 <p><code>目的：</code></p>
 <p>我们通过近似equal norm frame稍微地移动其中的vectors 使其变成equal norm Parseval frame。</p>
 </blockquote>
-<hr>
-<h5 id="The-Paulsen-Problem"><a href="#The-Paulsen-Problem" class="headerlink" title="The Paulsen Problem"></a>The Paulsen Problem</h5><p>what is the best function$f(n,d,\varepsilon)$ such that for any $u_1,…,u_n\in R^d$  with</p>
-<p>$(1-\varepsilon)\frac{d}{n}\le|u_i|_2^2\le(1+\varepsilon)\frac{d}{n}\quad\forall1\le i\le n$   ($\varepsilon$  —nearly equal norm)</p>
-<p>$(1-\varepsilon)I_d\preceq\sum\limits_{i=1}^nu_iu_i^T\preceq(1+\varepsilon)I_d$  ($\varepsilon$—nearly Parseval) </p>
+<hr />
+<h5 id="the-paulsen-problem">The Paulsen Problem</h5>
+<p>what is the best function<span class="math inline">\(f(n,d,\varepsilon)\)</span> such that for any <span class="math inline">\(u_1,...,u_n\in R^d\)</span> with</p>
+<p><span class="math inline">\((1-\varepsilon)\frac{d}{n}\le\|u_i\|_2^2\le(1+\varepsilon)\frac{d}{n}\quad\forall1\le i\le n\)</span> (<span class="math inline">\(\varepsilon\)</span> —nearly equal norm)</p>
+<p><span class="math inline">\((1-\varepsilon)I_d\preceq\sum\limits_{i=1}^nu_iu_i^T\preceq(1+\varepsilon)I_d\)</span> (<span class="math inline">\(\varepsilon\)</span>—nearly Parseval)</p>
 <p><code>右边减左边是正定的</code></p>
-<p>there exist $v_1,..v_n\in R^d$ with</p>
-<p>$||v_i||<em>2^2=\frac{d}{n}\quad\forall1\le i\le n$[^6] and  $\sum</em>{i=1}^nv_iv_i^T=I_d$ </p>
+<p>there exist <span class="math inline">\(v_1,..v_n\in R^d\)</span> with</p>
+<p><span class="math inline">\(||v_i||_2^2=\frac{d}{n}\quad\forall1\le i\le n\)</span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and <span class="math inline">\(\sum_{i=1}^nv_iv_i^T=I_d\)</span></p>
 <p>such that</p>
-<p>$$<br>dist^2(u_i,v_i)=\sum\limits_{i=1}^n|u_i-v_i|_2^2\le f(n,d,\varepsilon)?<br>$$</p>
+<p><span class="math display">\[
+dist^2(u_i,v_i)=\sum\limits_{i=1}^n\|u_i-v_i\|_2^2\le f(n,d,\varepsilon)?
+\]</span></p>
 <blockquote>
 <p><code>个人理解：</code></p>
 <p>从“approximate”到equal norm Parseval frame，我们使这个变化过程中向量的改变一定不超过f，所以我们要想办法确定f的上界。</p>
 </blockquote>
-<hr>
-<h5 id="Previous-Work"><a href="#Previous-Work" class="headerlink" title="Previous Work"></a>Previous Work</h5><p>[Bodmann-Casazza,10] $f(d,n,\varepsilon)= O(d^{42}n^{18}\varepsilon^2)$ when $gcd(d,n)=1.$<a href="d与n的最大公约数为1">^1</a></p>
+<hr />
+<h5 id="previous-work">Previous Work</h5>
+<p>[Bodmann-Casazza,10] <span class="math inline">\(f(d,n,\varepsilon)= O(d^{42}n^{18}\varepsilon^2)\)</span> when <span class="math inline">\(gcd(d,n)=1.\)</span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <blockquote>
 <p>从数学的角度讲：</p>
-<p>令f和g为从整数集或实数集到实数集的函数。如果存在常数C和k使得只要当x&gt;k时就有<br>$$<br>|f(x)|\le C|g(x)|<br>$$<br>我们就说f(x)是O(g(x))的。</p>
+<p>令f和g为从整数集或实数集到实数集的函数。如果存在常数C和k使得只要当x&gt;k时就有 <span class="math display">\[
+|f(x)|\le C|g(x)|
+\]</span> 我们就说f(x)是O(g(x))的。</p>
 <p>直觉上，当x无限增长时f(x)的增长率慢于g(x)的某个固定倍数</p>
 <p>说白了，O只是一个对于函数的上界的估计，最坏情况的估计。</p>
 </blockquote>
 <ul>
 <li>dynamical system improves on equal norm while keeping Parseval.</li>
 </ul>
-<p>[Casazza-Fickus-Mixon,12] $f(d,n,\varepsilon)= O(d^{20/7}n^{2/7}\varepsilon^{2/7})$</p>
+<p>[Casazza-Fickus-Mixon,12] <span class="math inline">\(f(d,n,\varepsilon)= O(d^{20/7}n^{2/7}\varepsilon^{2/7})\)</span></p>
 <ul>
 <li>gradient descent improves on Parseval while keeping equal norm.</li>
 </ul>
-<p>There are examples showing that $f(d,n,\varepsilon)\ge d\varepsilon.$</p>
+<p>There are examples showing that <span class="math inline">\(f(d,n,\varepsilon)\ge d\varepsilon.\)</span></p>
 <p><strong>Open question:</strong>Can the bound be independent of n?</p>
 <p><code>函数f的界限是否可以独立与n？</code></p>
-<h5 id="Main-Result"><a href="#Main-Result" class="headerlink" title="Main Result"></a>Main Result</h5><p><strong>Theorem</strong>.&emsp;$f(d,n,\varepsilon) = O(d^{13/2}\varepsilon)$ </p>
+<h5 id="main-result">Main Result</h5>
+<p><strong>Theorem</strong>. <span class="math inline">\(f(d,n,\varepsilon) = O(d^{13/2}\varepsilon)\)</span></p>
 <p>The proof has two parts.</p>
 <p>First, we define a dynamical system based on operator scaling,</p>
-<p>&emsp;&emsp;and show that $f(d,n,\varepsilon) = O(d^2n\varepsilon)$  </p>
-<p>Then,we do a smoothed analysis to remove the dependency on $n.$    </p>
-<hr>
-<h3 id="Part-II-Continuous-operator-scaling"><a href="#Part-II-Continuous-operator-scaling" class="headerlink" title="Part II:Continuous operator scaling"></a>Part II:Continuous operator scaling</h3><ul>
+<p>  and show that <span class="math inline">\(f(d,n,\varepsilon) = O(d^2n\varepsilon)\)</span></p>
+<p>Then,we do a smoothed analysis to remove the dependency on <span class="math inline">\(n.\)</span></p>
+<hr />
+<h3 id="part-iicontinuous-operator-scaling">Part II:Continuous operator scaling</h3>
+<ul>
 <li>Operator scaling, alternating algorithm, reduction</li>
 <li>Analysis of dynamical system</li>
 </ul>
-<h5 id="Alternating-Algorithm"><a href="#Alternating-Algorithm" class="headerlink" title="Alternating Algorithm"></a>Alternating Algorithm</h5><p>How to move an approximate to satisfy the two conditions exactly?</p>
+<h5 id="alternating-algorithm">Alternating Algorithm</h5>
+<p>How to move an approximate to satisfy the two conditions exactly?</p>
 <p>The problem is difficult with two conditions. It is easy with one condition.</p>
 <ul>
-<li>To satisfy the equal norm condition, we just rescale the vectors.[^2]</li>
+<li>To satisfy the equal norm condition, we just rescale the vectors.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
 <li>To satisfy the Parseval condition, we can set</li>
 </ul>
-<p>$$u_i\leftarrow(\sum\limits_{i=1}^nu_iu_i^T)^{-\frac{1}{2}}u_i$$ so that $$\sum\limits_{i=1}^nu_iu_i^T=I_d$$ </p>
+<p><span class="math display">\[u_i\leftarrow(\sum\limits_{i=1}^nu_iu_i^T)^{-\frac{1}{2}}u_i\]</span> so that <span class="math display">\[\sum\limits_{i=1}^nu_iu_i^T=I_d\]</span></p>
 <blockquote>
 <p>求矩阵的-1/2次方：前提矩阵非负定</p>
-<p>$u_iu_i^T$ 实对称 可相似对角化 $(u_iu_i^T)^{-\frac12}=(P^{-1}\Lambda^{\frac12} P)^{-1}$ </p>
+<p><span class="math inline">\(u_iu_i^T\)</span> 实对称 可相似对角化 <span class="math inline">\((u_iu_i^T)^{-\frac12}=(P^{-1}\Lambda^{\frac12} P)^{-1}\)</span></p>
 </blockquote>
 <p>A natural algorithm is to alternate between these two steps and hope that it will converge to a solution satisfying both conditions.</p>
 <blockquote>
 <p><code>总结：</code></p>
 <p>这里提出一种交替算法，进行一步equal norm变换后；再进行一次Parseval变换；交替进行，直到收敛，得到的结果便可以满足equal norm和Parseval两个条件。</p>
 </blockquote>
-<h5 id="First-Idea"><a href="#First-Idea" class="headerlink" title="First Idea"></a>First Idea</h5><p>This is a special case of the alternating algorithm for operator scaling, which was analyzed in [Gurvits 04, Garg-Gurvits-Oliveira-Wigderson 16].</p>
+<h5 id="first-idea">First Idea</h5>
+<p>This is a special case of the alternating algorithm for operator scaling, which was analyzed in [Gurvits 04, Garg-Gurvits-Oliveira-Wigderson 16].</p>
 <p>Our starting point is to bound the distance by the total movement in the alternating algorithm (assuming it converges):</p>
 <blockquote>
 <p><code>研究出发点：</code></p>
 <p>如果交替算法得到的结果收敛的话，研究变换过程。</p>
 <p>向量的“移动”过程如下图</p>
 </blockquote>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fwjohf3tmmj30lo06ewg5.jpg" alt="离散"></p>
-<h5 id="Operator-Scaling"><a href="#Operator-Scaling" class="headerlink" title="Operator Scaling"></a>Operator Scaling</h5><p>An operator is a collection of matrices $U_1,…,U_k\in R^{m\times n}$ [Gurvits 04] </p>
-<p>Given $U_1,…,U_k\in R^{m\times n}$,we would like to find $L \in R^{m\times m}$,and $R \in R^{n\times n}\quad$such that if we define $V_i = LU_iR\quad for\quad 1\leq k\leq n\quad$then $$\sum\limits_{i=1}^kV_iV_i^T=cnI_m\quad and\quad\sum\limits_{i=1}^kV_i^TV_i=cmI_n$$</p>
+<figure>
+<img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fwjohf3tmmj30lo06ewg5.jpg" alt="" /><figcaption>离散</figcaption>
+</figure>
+<h5 id="operator-scaling">Operator Scaling</h5>
+<p>An operator is a collection of matrices <span class="math inline">\(U_1,...,U_k\in R^{m\times n}\)</span> [Gurvits 04]</p>
+<p>Given <span class="math inline">\(U_1,...,U_k\in R^{m\times n}\)</span>,we would like to find <span class="math inline">\(L \in R^{m\times m}\)</span>,and <span class="math inline">\(R \in R^{n\times n}\quad\)</span>such that if we define <span class="math inline">\(V_i = LU_iR\quad for\quad 1\leq k\leq n\quad\)</span>then <span class="math display">\[\sum\limits_{i=1}^kV_iV_i^T=cnI_m\quad and\quad\sum\limits_{i=1}^kV_i^TV_i=cmI_n\]</span></p>
 <p>for some constant c.</p>
 <p>We say an operator satisfying the two conditions <em>doubly balanced.</em></p>
 <p>when c = 1/n called doubly stochastic</p>
@@ -316,153 +335,225 @@
 <p>operator scaling 需要找到满足上面条件的L 和R.</p>
 <p>那么，该如何找呢？</p>
 </blockquote>
-<hr>
-<h5 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h5><p>Matrix Scaling; Frame Scaling; PSD Scaling; Operator Scaling</p>
-<h5 id="Alternating-Algorithm-1"><a href="#Alternating-Algorithm-1" class="headerlink" title="Alternating Algorithm"></a>Alternating Algorithm</h5><p>Repeat the following tow steps [Gurivits 04]</p>
+<hr />
+<h5 id="applications">Applications</h5>
+<p>Matrix Scaling; Frame Scaling; PSD Scaling; Operator Scaling</p>
+<h5 id="alternating-algorithm-1">Alternating Algorithm</h5>
+<p>Repeat the following tow steps [Gurivits 04]</p>
 <ul>
-<li>To satisfy the condition $\sum\limits_{i=1}^kU_iU_i^T=I_m$  , we set  </li>
+<li>To satisfy the condition <span class="math inline">\(\sum\limits_{i=1}^kU_iU_i^T=I_m\)</span> , we set</li>
 </ul>
-<p>$$<br>U_i\leftarrow(\sum\limits_{j=1}^kU_jU_j^T)^{-\frac12}U_i<br>$$</p>
+<p><span class="math display">\[
+U_i\leftarrow(\sum\limits_{j=1}^kU_jU_j^T)^{-\frac12}U_i
+\]</span></p>
 <ul>
-<li>To satisfy the condition $\sum\limits_{i=1}^kU_i^TU_i=I_n$ , we set  </li>
+<li>To satisfy the condition <span class="math inline">\(\sum\limits_{i=1}^kU_i^TU_i=I_n\)</span> , we set</li>
 </ul>
-<p>$$<br>U_i\leftarrow U_i(\sum\limits_{j=1}^kU_j^TU_j)^{-\frac12}<br>$$</p>
-<p>A natural algorithm is to alternate between these two steps and hope that it will converge to a solution satisfying both conditions. </p>
+<p><span class="math display">\[
+U_i\leftarrow U_i(\sum\limits_{j=1}^kU_j^TU_j)^{-\frac12}
+\]</span></p>
+<p>A natural algorithm is to alternate between these two steps and hope that it will converge to a solution satisfying both conditions.</p>
 <blockquote>
 <p><code>总结：</code></p>
-<p>通过交替算法，我们最后可以使得一个组矩阵 U<del>i</del>最后收敛，满足上面两种conditions，这样，我们就得到了operator scaling 中的V<del>i</del>.</p>
+<p>通过交替算法，我们最后可以使得一个组矩阵 U<sub>i</sub>最后收敛，满足上面两种conditions，这样，我们就得到了operator scaling 中的V<sub>i</sub>.</p>
 <p>这将operator scaling 和Paseval problem 联系了起来。</p>
 </blockquote>
-<h5 id="Reduction"><a href="#Reduction" class="headerlink" title="Reduction"></a>Reduction</h5><p>A simple reduction from frame scaling to operator scaling:</p>
-<p>$$u_i\in R^d\to U_i\equiv\begin{pmatrix} |&amp;|&amp;|\0&amp;u_i&amp;0\|&amp;|&amp;| \end{pmatrix}\in R^{d\times n}$$ one column being import, other columns are zero.</p>
+<h5 id="reduction">Reduction</h5>
+<p>A simple reduction from frame scaling to operator scaling:</p>
+<p><span class="math display">\[u_i\in R^d\to U_i\equiv\begin{pmatrix} |&amp;|&amp;|\\0&amp;u_i&amp;0\\|&amp;|&amp;| \end{pmatrix}\in R^{d\times n}\]</span> one column being import, other columns are zero.</p>
 <ul>
-<li>The condition $\sum\limits_{i=1}^nU_iU_i^T=I_d$ is the Parseval condition $\sum\limits_{i=1}^nv_iv_i^T=I_d$   </li>
-<li>The condition $\sum\limits_{i=1}^nU_i^TU_i=\frac mnI_n$ is the equal norm condition </li>
+<li>The condition <span class="math inline">\(\sum\limits_{i=1}^nU_iU_i^T=I_d\)</span> is the Parseval condition <span class="math inline">\(\sum\limits_{i=1}^nv_iv_i^T=I_d\)</span><br />
+</li>
+<li>The condition <span class="math inline">\(\sum\limits_{i=1}^nU_i^TU_i=\frac mnI_n\)</span> is the equal norm condition</li>
 </ul>
-<p>$$<br>\begin{pmatrix}|u_1|_2^2&amp;…&amp;0\ \vdots&amp;\ddots&amp;\vdots\0&amp;…&amp;|u_n|_2^2\end{pmatrix}=\frac mnI_n.<br>$$</p>
+<p><span class="math display">\[
+\begin{pmatrix}\|u_1\|_2^2&amp;...&amp;0\\ \vdots&amp;\ddots&amp;\vdots\\0&amp;...&amp;\|u_n\|_2^2\end{pmatrix}=\frac mnI_n.
+\]</span></p>
 <p>So we focus on this more general setting in this part of the talk.</p>
 <blockquote>
 <p><code>总结：</code></p>
-<p>问题归约技术 Paulsen problem –&gt; operator scaling –&gt; matrix sxaling</p>
+<p>问题归约技术 Paulsen problem --&gt; operator scaling --&gt; matrix sxaling</p>
 <p>通过把向量构造成矩阵之后，我们发现，寻找equal norm Paseval frame 和 operator scaling 是同一个问题。</p>
 </blockquote>
-<h5 id="The-Operator-Paulsen-Problem"><a href="#The-Operator-Paulsen-Problem" class="headerlink" title="The Operator Paulsen Problem"></a>The Operator Paulsen Problem</h5><p>What is the best function $g(m,n,k,\varepsilon)$  s.t. for any $U_1,…,U_k\in R^{m\times n}$ with</p>
-<p>$$<br>(1-\varepsilon)I_m\preceq\sum\limits_{i=1}^kU_iU_i^T\preceq(1+\varepsilon)I_m,(1-\varepsilon)\frac mnI_n\preceq\sum\limits_{i=1}^kU_i^TU_i\preceq(1+\varepsilon)\frac mnI_n<br>$$</p>
-<p>there exits$V_1,…,V_k\in R^{m\times n}$ with</p>
-<p>$$\sum\limits_{i=1}^kV_iV_i^T=I_m$$ and $\sum\limits_{i=1}^kV_i^TV_i=\frac mnI_n$ </p>
+<h5 id="the-operator-paulsen-problem">The Operator Paulsen Problem</h5>
+<p>What is the best function <span class="math inline">\(g(m,n,k,\varepsilon)\)</span> s.t. for any <span class="math inline">\(U_1,...,U_k\in R^{m\times n}\)</span> with</p>
+<p><span class="math display">\[
+(1-\varepsilon)I_m\preceq\sum\limits_{i=1}^kU_iU_i^T\preceq(1+\varepsilon)I_m,(1-\varepsilon)\frac mnI_n\preceq\sum\limits_{i=1}^kU_i^TU_i\preceq(1+\varepsilon)\frac mnI_n
+\]</span></p>
+<p>there exits<span class="math inline">\(V_1,...,V_k\in R^{m\times n}\)</span> with</p>
+<p><span class="math display">\[\sum\limits_{i=1}^kV_iV_i^T=I_m\]</span> and <span class="math inline">\(\sum\limits_{i=1}^kV_i^TV_i=\frac mnI_n\)</span></p>
 <p>doubly stochastic</p>
 <p>such that</p>
-<p>$$<br>\sum\limits_{i=1}^k|U_i-V_i|_F^2\le g(m,n,k,\varepsilon)?<br>$$<br> show $\leq m^2n\varepsilon$<br>$$<br>U^{(t+2)}_i=U^{(t+1)}_i(R^{(t+1)})^{-\frac12}=(L^{(t)})^{-\frac12}U^{(t)}_i(R^{(t+1)})^{-\frac12}<br>$$</p>
+<p><span class="math display">\[
+\sum\limits_{i=1}^k\|U_i-V_i\|_F^2\le g(m,n,k,\varepsilon)?
+\]</span> show <span class="math inline">\(\leq m^2n\varepsilon\)</span> <span class="math display">\[
+U^{(t+2)}_i=U^{(t+1)}_i(R^{(t+1)})^{-\frac12}=(L^{(t)})^{-\frac12}U^{(t)}_i(R^{(t+1)})^{-\frac12}
+\]</span></p>
 <blockquote>
 <p><code>总结：</code></p>
 <p>把doubly balanced operator和equal norm Parseval frame 联系起来之后，我们可以把Parseval problem换一种表述方式。</p>
 </blockquote>
-<hr>
-<h5 id="Issues-in-First-Idea"><a href="#Issues-in-First-Idea" class="headerlink" title="Issues in First Idea"></a>Issues in First Idea</h5><p>There are examples which do not converge:</p>
-<p>$$<br>\begin{pmatrix}1\0\end{pmatrix},\begin{pmatrix}1\0\end{pmatrix},\begin{pmatrix}0\1\end{pmatrix}\Leftrightarrow\begin{pmatrix}\sqrt2/2\0\end{pmatrix},\begin{pmatrix}\sqrt2/2\0\end{pmatrix},\begin{pmatrix}0\1\end{pmatrix}<br>$$<br>Even if it converges, the path could zig-zag a lot and the total movement is much larger than the distance. </p>
+<hr />
+<h5 id="issues-in-first-idea">Issues in First Idea</h5>
+<p>There are examples which do not converge:</p>
+<p><span class="math display">\[
+\begin{pmatrix}1\\0\end{pmatrix},\begin{pmatrix}1\\0\end{pmatrix},\begin{pmatrix}0\\1\end{pmatrix}\Leftrightarrow\begin{pmatrix}\sqrt2/2\\0\end{pmatrix},\begin{pmatrix}\sqrt2/2\\0\end{pmatrix},\begin{pmatrix}0\\1\end{pmatrix}
+\]</span> Even if it converges, the path could zig-zag a lot and the total movement is much larger than the distance.</p>
 <blockquote>
 <p><code>思考：</code></p>
 <p>上述例子称为：not scalable</p>
 <p>zig-zag和larger distance意味着vectors的变化肯定不会是slightly.</p>
 </blockquote>
-<h5 id="Continuous-Operator-Scaling"><a href="#Continuous-Operator-Scaling" class="headerlink" title="Continuous Operator Scaling"></a>Continuous Operator Scaling</h5><p><strong>Dynamical System:</strong>Do both steps simultaneously and continuously.<br>$$<br>\frac {d}{dt}U_i=(sI_m-m\sum\limits_{j=1}^kU_iU_j^T)U_i+U_i(sI_n-n\sum\limits_{j=1}^{k}U_j^TU_j)<br>$$<br>where  $s=\sum_{i=1}^{k}|U_i|_F^2$ [^3] is the <code>size</code> of the operator.</p>
+<h5 id="continuous-operator-scaling">Continuous Operator Scaling</h5>
+<p><strong>Dynamical System:</strong>Do both steps simultaneously and continuously. <span class="math display">\[
+\frac {d}{dt}U_i=(sI_m-m\sum\limits_{j=1}^kU_iU_j^T)U_i+U_i(sI_n-n\sum\limits_{j=1}^{k}U_j^TU_j)
+\]</span> where <span class="math inline">\(s=\sum_{i=1}^{k}\|U_i\|_F^2\)</span> <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> is the <code>size</code> of the operator.</p>
 <blockquote>
-<p>$s=tr(\sum\limits_{i=1}^kU_iU_i^T)=tr(\sum\limits_{i=1}^kU_i^TU_i)$</p>
+<p><span class="math inline">\(s=tr(\sum\limits_{i=1}^kU_iU_i^T)=tr(\sum\limits_{i=1}^kU_i^TU_i)\)</span></p>
 </blockquote>
-<p><em>Discrete:</em>  $U_i\leftarrow(\sum\limits_{j=1}^kU_jU_j^T)^{-1/2}U_i$  </p>
-<p>$\frac ms\sum\limits_{j=1}^kU_jU_j^T\approx I$ </p>
-<p><em>Continuous:</em>  $U_i\leftarrow(\frac ms\sum\limits_{j=1}^kU_jU_j^T)^{-\frac12dt}U_i$  </p>
-<p>利用$(I-X)^{-dt}\approx I+Xdt$ [^4]得到<br>$$<br>U_i\leftarrow(\sum\limits_{j=1}^kU_jU_j^T)^{-dt}U_i\implies\frac {d}{dt}U_i=(I_m-\sum\limits_{j=1}^kU_jU_j^T)U_i<br>$$</p>
+<p><em>Discrete:</em> <span class="math inline">\(U_i\leftarrow(\sum\limits_{j=1}^kU_jU_j^T)^{-1/2}U_i\)</span></p>
+<p><span class="math inline">\(\frac ms\sum\limits_{j=1}^kU_jU_j^T\approx I\)</span></p>
+<p><em>Continuous:</em> <span class="math inline">\(U_i\leftarrow(\frac ms\sum\limits_{j=1}^kU_jU_j^T)^{-\frac12dt}U_i\)</span></p>
+<p>利用<span class="math inline">\((I-X)^{-dt}\approx I+Xdt\)</span> <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>得到 <span class="math display">\[
+U_i\leftarrow(\sum\limits_{j=1}^kU_jU_j^T)^{-dt}U_i\implies\frac {d}{dt}U_i=(I_m-\sum\limits_{j=1}^kU_jU_j^T)U_i
+\]</span></p>
 <blockquote>
-<p>加上上标t来代表U<del>i</del>随时间t的变化。</p>
+<p>加上上标t来代表U<sub>i</sub>随时间t的变化。</p>
 </blockquote>
-<h5 id="Total-Movement"><a href="#Total-Movement" class="headerlink" title="Total Movement"></a>Total Movement</h5><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fwjohepbi0j30lo06e0uc.jpg" alt="连续化"></p>
-<p>We again bound the final distance by the total movement (the path length). </p>
-<p>$$<br>(\sum\limits_{i=1}^k|U_i^{(\infty)}-U_i^{(0)}|<em>F^2)^{\frac12}=(\sum\limits</em>{i=1}^k|\int_0^{\infty}\frac d{dt}U_i^{(t)}dt|<em>F^2)^{\frac12}\le\sum\limits</em>{i=1}^k\int_0^{\infty}(|\frac d{dt}U_i^{(t)}|_F^2)^{\frac12}dt<br>$$<br>通过 <em>triangle inequality</em>[^5]  得到不等式</p>
+<h5 id="total-movement">Total Movement</h5>
+<figure>
+<img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fwjohepbi0j30lo06e0uc.jpg" alt="" /><figcaption>连续化</figcaption>
+</figure>
+<p>We again bound the final distance by the total movement (the path length).</p>
+<p><span class="math display">\[
+(\sum\limits_{i=1}^k\|U_i^{(\infty)}-U_i^{(0)}\|_F^2)^{\frac12}=(\sum\limits_{i=1}^k\|\int_0^{\infty}\frac d{dt}U_i^{(t)}dt\|_F^2)^{\frac12}\le\sum\limits_{i=1}^k\int_0^{\infty}(\|\frac d{dt}U_i^{(t)}\|_F^2)^{\frac12}dt
+\]</span> 通过 <em>triangle inequality</em><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> 得到不等式</p>
 <blockquote>
 <p>先求积分再求范数小于等于先求范数再求积分</p>
 </blockquote>
-<hr>
-<h5 id="Error-Measure"><a href="#Error-Measure" class="headerlink" title="Error Measure"></a>Error Measure</h5><p>[Gurvits 04]<br>$$<br>\Delta=\frac1m|sI_m-m\sum\limits_{j=1}^kU_jU_j^T|<em>F^2+\frac1n|sI_n-n\sum\limits</em>{j=1}^kU_j^TU_j|_F^2<br>$$</p>
-<p><em>Intuition:</em> In the Paulsen problem,<br>$$<br>(1-\varepsilon)I_m\preceq\sum\limits_{i=1}^kU_iU_i^T\preceq(1+\varepsilon)I_m\quad\Leftrightarrow\quad \max\limits_i|\lambda_i-1|\le\varepsilon<br>$$</p>
-<p>$\varepsilon\quad is\quad L_\infty$ bound on eigenvalues</p>
+<hr />
+<h5 id="error-measure">Error Measure</h5>
+<p>[Gurvits 04] <span class="math display">\[
+\Delta=\frac1m\|sI_m-m\sum\limits_{j=1}^kU_jU_j^T\|_F^2+\frac1n\|sI_n-n\sum\limits_{j=1}^kU_j^TU_j\|_F^2
+\]</span></p>
+<p><em>Intuition:</em> In the Paulsen problem, <span class="math display">\[
+(1-\varepsilon)I_m\preceq\sum\limits_{i=1}^kU_iU_i^T\preceq(1+\varepsilon)I_m\quad\Leftrightarrow\quad \max\limits_i|\lambda_i-1|\le\varepsilon
+\]</span></p>
+<p><span class="math inline">\(\varepsilon\quad is\quad L_\infty\)</span> bound on eigenvalues</p>
 <blockquote>
 <p>从矩阵特征值的角度来看：</p>
-<p>$\lambda$介于$1-\varepsilon\quad and\quad 1+\varepsilon$ 之间</p>
-<p>$\varepsilon\geq \max$ 属于 L<del>infinity</del>   norm</p>
+<p><span class="math inline">\(\lambda\)</span>介于<span class="math inline">\(1-\varepsilon\quad and\quad 1+\varepsilon\)</span> 之间</p>
+<p><span class="math inline">\(\varepsilon\geq \max\)</span> 属于 L<sub>infinity</sub> norm</p>
 </blockquote>
-<p>$$<br>|I_m-\sum\limits_{j=1}^kU_jU_j^T|<em>F^2\le\Delta\quad \Leftrightarrow\quad\sum\limits</em>{i=1}^m(\lambda_i-1)^2\le\Delta<br>$$</p>
-<p>$\Delta\quad is\quad L_2$ bound on eigenvalues</p>
+<p><span class="math display">\[
+\|I_m-\sum\limits_{j=1}^kU_jU_j^T\|_F^2\le\Delta\quad \Leftrightarrow\quad\sum\limits_{i=1}^m(\lambda_i-1)^2\le\Delta
+\]</span></p>
+<p><span class="math inline">\(\Delta\quad is\quad L_2\)</span> bound on eigenvalues</p>
 <blockquote>
-<p>在衡量误差上，我不使用Paulson problem的$\varepsilon$    而使用$\Delta$ :</p>
-<p>$\Delta$ 属于L<del>2</del>  norm.</p>
-<p>$|A|_F^2=tr(A^<em>A)$ 其中A^</em>^ 是A的共轭转置矩阵。</p>
-<p>$tr(A) = \lambda_1+\lambda_2+…\lambda_n=\sum\limits_{i=1}^n\lambda_i$</p>
+<p>在衡量误差上，我不使用Paulson problem的<span class="math inline">\(\varepsilon\)</span> 而使用<span class="math inline">\(\Delta\)</span> :</p>
+<p><span class="math inline">\(\Delta\)</span> 属于L<sub>2</sub> norm.</p>
+<p><span class="math inline">\(\|A\|_F^2=tr(A^*A)\)</span> 其中A^*^ 是A的共轭转置矩阵。</p>
+<p><span class="math inline">\(tr(A) = \lambda_1+\lambda_2+...\lambda_n=\sum\limits_{i=1}^n\lambda_i\)</span></p>
 </blockquote>
 <p>Easier to work with 2-norm.</p>
 <ul>
-<li>$\Delta$ is zero if and only if the operator is doubly balanced.</li>
-<li>Can show that $\Delta\le m^2\varepsilon^2$.</li>
-<li>Focus on proving the total movement is $\le mn\sqrt{\Delta}\le m^2n\varepsilon.$</li>
+<li><span class="math inline">\(\Delta\)</span> is zero if and only if the operator is doubly balanced.</li>
+<li>Can show that <span class="math inline">\(\Delta\le m^2\varepsilon^2\)</span>.</li>
+<li>Focus on proving the total movement is <span class="math inline">\(\le mn\sqrt{\Delta}\le m^2n\varepsilon.\)</span></li>
 </ul>
-<p>The dynamical system is moving in the direcrtion that minimizes $\Delta$.</p>
+<p>The dynamical system is moving in the direcrtion that minimizes <span class="math inline">\(\Delta\)</span>.</p>
 <p><code>Gradient flow</code>.</p>
 <blockquote>
 <p>dynamical system ：</p>
 <p>目的是为了得到doubly balanced，我们要使得Delta为0，所以</p>
 <p>类似一个gradient decent 的过程（个人理解），每次移动的方向是使得Delta变小的方向。</p>
 </blockquote>
-<hr>
-<h5 id="Convergence"><a href="#Convergence" class="headerlink" title="Convergence"></a>Convergence</h5><p>We find some nice identities to analyze the convergence.</p>
-<p><strong>Lemma 1.</strong> $\frac d{dt}s^{(t)}=-2\Delta^{(t)}.$</p>
+<hr />
+<h5 id="convergence">Convergence</h5>
+<p>We find some nice identities to analyze the convergence.</p>
+<p><strong>Lemma 1.</strong> <span class="math inline">\(\frac d{dt}s^{(t)}=-2\Delta^{(t)}.\)</span></p>
 <blockquote>
 <p>s随时间t的变化率是负的，说明s随时间增长而不断减少。</p>
 </blockquote>
-<p><strong>Lemma 2.</strong> $\frac d{dt}\Delta^{(t)}=-4\sum\limits_{i=1}^k|\frac d{dt}U_i^{(t)}|_F^2$</p>
+<p><strong>Lemma 2.</strong> <span class="math inline">\(\frac d{dt}\Delta^{(t)}=-4\sum\limits_{i=1}^k\|\frac d{dt}U_i^{(t)}\|_F^2\)</span></p>
 <blockquote>
 <p>Delta随时间的变化率也是负的，说明Delta也随时间增长而降低。</p>
 <p>并且local movement more，Delta decreasing more.</p>
 </blockquote>
 <p><strong>Claim.</strong> The dynamical system converges to a doubly balanced operator.</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fwo94btl9hj30n2078abr.jpg" alt="屏幕快照 2018-10-28 下午9.19.54"></p>
+<figure>
+<img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fwo94btl9hj30n2078abr.jpg" alt="" /><figcaption>屏幕快照 2018-10-28 下午9.19.54</figcaption>
+</figure>
 <p><strong>Remark.</strong> For an operator that is not <code>scalable</code>, its size will shrink to zero.</p>
 <blockquote>
 <p>当Delta降低到0时，s不会再减少，即the size of operator不会再变化，这时我们得到的operator满足 doubly balanced.</p>
 </blockquote>
-<p><strong>lemma 3.</strong> $cap(u^{t})$ is unchanged over time</p>
-<p><strong>lemma 4.</strong> $cap(u^{t})$ lower bound upper bound:<br>$$<br>s^{(T)}\geq cap(u^{T})=cap(u^{(t)})\ge s^{(t)}-mn\sqrt{\Delta^{(t)}}<br>$$</p>
-<h5 id="Local-Movement"><a href="#Local-Movement" class="headerlink" title="Local Movement"></a>Local Movement</h5><p>$$<br>dist(u^{\infin},u^{0})=(\sum\limits_{i=1}^k|U_i^{(\infty)}-U_i^{(0)}|<em>F^2)^{\frac12}\le\int_0^{\infty}(\sum\limits</em>{i=1}^k|\frac d{dt}U_i^{(t)}|_F^2)^{\frac12}dt\=\int_0^\infty\sqrt{-\frac d{dt}\Delta^{(t)}}dt<br>$$</p>
-<p><strong>Half time.</strong> The first time T so that $\Delta^{(T)}=\Delta^{(0)}/2.$Then use geometric sum.<br>$$<br>\sum\limits_{i=1}^k|U_i^{(\infty)}-U_i^{(0)}|_F^2\le(\int_0^\infty\sqrt{-\frac d{dt}\Delta^{(t)}}dt)^2\le4(\int_0^T\sqrt{-\frac d{dt}\Delta^{(t)}}dt)^2<br>$$</p>
+<p><strong>lemma 3.</strong> <span class="math inline">\(cap(u^{t})\)</span> is unchanged over time</p>
+<p><strong>lemma 4.</strong> <span class="math inline">\(cap(u^{t})\)</span> lower bound upper bound: <span class="math display">\[
+s^{(T)}\geq cap(u^{T})=cap(u^{(t)})\ge s^{(t)}-mn\sqrt{\Delta^{(t)}}
+\]</span></p>
+<h5 id="local-movement">Local Movement</h5>
+<p><span class="math display">\[
+dist(u^{\infin},u^{0})=(\sum\limits_{i=1}^k\|U_i^{(\infty)}-U_i^{(0)}\|_F^2)^{\frac12}\le\int_0^{\infty}(\sum\limits_{i=1}^k\|\frac d{dt}U_i^{(t)}\|_F^2)^{\frac12}dt\\=\int_0^\infty\sqrt{-\frac d{dt}\Delta^{(t)}}dt
+\]</span></p>
+<p><strong>Half time.</strong> The first time T so that <span class="math inline">\(\Delta^{(T)}=\Delta^{(0)}/2.\)</span>Then use geometric sum. <span class="math display">\[
+\sum\limits_{i=1}^k\|U_i^{(\infty)}-U_i^{(0)}\|_F^2\le(\int_0^\infty\sqrt{-\frac d{dt}\Delta^{(t)}}dt)^2\le4(\int_0^T\sqrt{-\frac d{dt}\Delta^{(t)}}dt)^2
+\]</span></p>
 <blockquote>
 <p>use Cauchy Schwarz inequality</p>
 </blockquote>
-<p>$$<br>(\int_0^T\sqrt{-\frac d{dt}\Delta^{(t)}}dt)^2\le(\int_0^T-\frac d{dt}\Delta^{(t)}dt)(\int_0^T1dt)\le T\Delta^{(0)}<br>$$</p>
-<p>So it remains to bound the half time.</p>
-<h3 id="Part-III-Smoothed-analysis"><a href="#Part-III-Smoothed-analysis" class="headerlink" title="Part III: Smoothed analysis"></a>Part III: Smoothed analysis</h3><ul>
+<p><span class="math display">\[
+(\int_0^T\sqrt{-\frac d{dt}\Delta^{(t)}}dt)^2\le(\int_0^T-\frac d{dt}\Delta^{(t)}dt)(\int_0^T1dt)\le T\Delta^{(0)}
+\]</span></p>
+<p>So it remains to bound the half time. ### Part III: Smoothed analysis</p>
+<ul>
 <li>Proof outline,capacity lower bound</li>
 </ul>
-<h5 id="Capacity-and-Total-Movement"><a href="#Capacity-and-Total-Movement" class="headerlink" title="Capacity and Total Movement"></a>Capacity and Total Movement</h5><p><strong>Remark:</strong> Smoothed analysis only works in the frame setting, not (yet) in the operator setting.</p>
-<p>In Part II, we proved $f(d,n)\le dn\sqrt{\Delta}.$</p>
-<p>In Part III, we proved that $f(d,n,\Delta)\le d^c\sqrt{\Delta}$ in “perturbed” instances</p>
+<h5 id="capacity-and-total-movement">Capacity and Total Movement</h5>
+<p><strong>Remark:</strong> Smoothed analysis only works in the frame setting, not (yet) in the operator setting.</p>
+<p>In Part II, we proved <span class="math inline">\(f(d,n)\le dn\sqrt{\Delta}.\)</span></p>
+<p>In Part III, we proved that <span class="math inline">\(f(d,n,\Delta)\le d^c\sqrt{\Delta}\)</span> in "perturbed" instances</p>
 <p>Intuition: operators with small capacity are rare.</p>
 <p>Idea: perturb an operator,and apply the dynamical system</p>
-<h5 id="Plan"><a href="#Plan" class="headerlink" title="Plan"></a>Plan</h5><p>movement in dynamical system$\le f(d,n,\Delta\tilde{(U)} )$</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxrbmjltm2j30v00c8dkw.jpg" alt="平滑性分析"></p>
+<h5 id="plan">Plan</h5>
+<p>movement in dynamical system<span class="math inline">\(\le f(d,n,\Delta\tilde{(U)} )\)</span></p>
+<figure>
+<img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fxrbmjltm2j30v00c8dkw.jpg" alt="" /><figcaption>平滑性分析</figcaption>
+</figure>
 <p>1.Upper bound the perturbation movement</p>
-<p>2.Error won’t increase too much</p>
+<p>2.Error won't increase too much</p>
 <p>3.Improved capacity in perturbed instances</p>
-<h5 id="Perturbation-Process"><a href="#Perturbation-Process" class="headerlink" title="Perturbation Process"></a>Perturbation Process</h5><h5 id="Reduction-to-Matrix-Capacity"><a href="#Reduction-to-Matrix-Capacity" class="headerlink" title="Reduction to Matrix Capacity"></a>Reduction to Matrix Capacity</h5><h5 id="New-Method-in-Capacity-Lower-Bound"><a href="#New-Method-in-Capacity-Lower-Bound" class="headerlink" title="New Method in Capacity Lower Bound"></a>New Method in Capacity Lower Bound</h5><p>capacity lower bound ——&gt; convergence of $\Delta$</p>
-<p>$$<br>-\frac d{dt}\Delta\ge \mu\Delta \Rightarrow cap\ge s-\frac{\Delta}{\mu}<br>$$</p>
-<h5 id="Pseudorandom-Propert"><a href="#Pseudorandom-Propert" class="headerlink" title="Pseudorandom Propert"></a>Pseudorandom Propert</h5><p>$$<br>-\frac d{dt}\Delta\ge{\sigma}^2n\Delta\Rightarrow cap\geq s-\frac{\Delta}{\sigma^2n}<br>$$</p>
+<h5 id="perturbation-process">Perturbation Process</h5>
+<h5 id="reduction-to-matrix-capacity">Reduction to Matrix Capacity</h5>
+<h5 id="new-method-in-capacity-lower-bound">New Method in Capacity Lower Bound</h5>
+<p>capacity lower bound ——&gt; convergence of <span class="math inline">\(\Delta\)</span></p>
+<p><span class="math display">\[
+-\frac d{dt}\Delta\ge \mu\Delta \Rightarrow cap\ge s-\frac{\Delta}{\mu}
+\]</span></p>
+<h5 id="pseudorandom-propert">Pseudorandom Propert</h5>
+<p><span class="math display">\[
+-\frac d{dt}\Delta\ge{\sigma}^2n\Delta\Rightarrow cap\geq s-\frac{\Delta}{\sigma^2n}
+\]</span></p>
 <p>The proof is based on a combinatorial argument</p>
 <blockquote>
 <p>把sigma设置成n分之XXX就可以把n去掉了</p>
 </blockquote>
-<h5 id="Big-Picture"><a href="#Big-Picture" class="headerlink" title="Big Picture"></a>Big Picture</h5><p>matrix capacity lower bound </p>
-<p>frame  capacity lower bound —&gt; total movement bound</p>
-<p>matrix convergence of Delta —&gt; capacity lower bound </p>
-<p>frame capacity lower bound —&gt; total movement bound</p>
-<p>[^2]: rescale: 向量单位化：$\frac{u_i}{|u_i|}$<br>[^3]: 矩阵Frobenius范数^2^: 对应元素平方和<br>[^4]: 泰勒展开 $(1+x)^{\alpha}=1+\alpha x+…+\frac{\complement_{\alpha}^n}{n!}x^n$<br>[^5]: 三角不等式<br>[^6]: 通过equal nrom 和Parseval 的条件证明，即可得</p>
+<h5 id="big-picture">Big Picture</h5>
+<p>matrix capacity lower bound</p>
+<p>frame capacity lower bound ---&gt; total movement bound</p>
+<p>matrix convergence of Delta ---&gt; capacity lower bound</p>
+<p>frame capacity lower bound ---&gt; total movement bound</p>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>通过equal nrom 和Parseval 的条件证明，即可得<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>d与n的最大公约数为1<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>rescale: 向量单位化：<span class="math inline">\(\frac{u_i}{|u_i|}\)</span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>矩阵Frobenius范数<sup>2</sup>: 对应元素平方和<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>泰勒展开 <span class="math inline">\((1+x)^{\alpha}=1+\alpha x+...+\frac{\complement_{\alpha}^n}{n!}x^n\)</span><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>三角不等式<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
     </div>
 
@@ -548,7 +639,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-I-Paulsen-problem"><span class="nav-number">1.</span> <span class="nav-text">Part I:Paulsen problem</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Frame"><span class="nav-number">1.0.1.</span> <span class="nav-text">Frame</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Motivation"><span class="nav-number">1.0.2.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#The-Paulsen-Problem"><span class="nav-number">1.0.3.</span> <span class="nav-text">The Paulsen Problem</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Previous-Work"><span class="nav-number">1.0.4.</span> <span class="nav-text">Previous Work</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Main-Result"><span class="nav-number">1.0.5.</span> <span class="nav-text">Main Result</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-II-Continuous-operator-scaling"><span class="nav-number">2.</span> <span class="nav-text">Part II:Continuous operator scaling</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Alternating-Algorithm"><span class="nav-number">2.0.1.</span> <span class="nav-text">Alternating Algorithm</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#First-Idea"><span class="nav-number">2.0.2.</span> <span class="nav-text">First Idea</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Operator-Scaling"><span class="nav-number">2.0.3.</span> <span class="nav-text">Operator Scaling</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Applications"><span class="nav-number">2.0.4.</span> <span class="nav-text">Applications</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Alternating-Algorithm-1"><span class="nav-number">2.0.5.</span> <span class="nav-text">Alternating Algorithm</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Reduction"><span class="nav-number">2.0.6.</span> <span class="nav-text">Reduction</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#The-Operator-Paulsen-Problem"><span class="nav-number">2.0.7.</span> <span class="nav-text">The Operator Paulsen Problem</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Issues-in-First-Idea"><span class="nav-number">2.0.8.</span> <span class="nav-text">Issues in First Idea</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Continuous-Operator-Scaling"><span class="nav-number">2.0.9.</span> <span class="nav-text">Continuous Operator Scaling</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Total-Movement"><span class="nav-number">2.0.10.</span> <span class="nav-text">Total Movement</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Error-Measure"><span class="nav-number">2.0.11.</span> <span class="nav-text">Error Measure</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Convergence"><span class="nav-number">2.0.12.</span> <span class="nav-text">Convergence</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Local-Movement"><span class="nav-number">2.0.13.</span> <span class="nav-text">Local Movement</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Part-III-Smoothed-analysis"><span class="nav-number">3.</span> <span class="nav-text">Part III: Smoothed analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Capacity-and-Total-Movement"><span class="nav-number">3.0.1.</span> <span class="nav-text">Capacity and Total Movement</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Plan"><span class="nav-number">3.0.2.</span> <span class="nav-text">Plan</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Perturbation-Process"><span class="nav-number">3.0.3.</span> <span class="nav-text">Perturbation Process</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Reduction-to-Matrix-Capacity"><span class="nav-number">3.0.4.</span> <span class="nav-text">Reduction to Matrix Capacity</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#New-Method-in-Capacity-Lower-Bound"><span class="nav-number">3.0.5.</span> <span class="nav-text">New Method in Capacity Lower Bound</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Pseudorandom-Propert"><span class="nav-number">3.0.6.</span> <span class="nav-text">Pseudorandom Propert</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Big-Picture"><span class="nav-number">3.0.7.</span> <span class="nav-text">Big Picture</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#part-ipaulsen-problem"><span class="nav-number">1.</span> <span class="nav-text">Part I:Paulsen problem</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#frame"><span class="nav-number">1.0.1.</span> <span class="nav-text">Frame</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#motivation"><span class="nav-number">1.0.2.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#the-paulsen-problem"><span class="nav-number">1.0.3.</span> <span class="nav-text">The Paulsen Problem</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#previous-work"><span class="nav-number">1.0.4.</span> <span class="nav-text">Previous Work</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#main-result"><span class="nav-number">1.0.5.</span> <span class="nav-text">Main Result</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#part-iicontinuous-operator-scaling"><span class="nav-number">2.</span> <span class="nav-text">Part II:Continuous operator scaling</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#alternating-algorithm"><span class="nav-number">2.0.1.</span> <span class="nav-text">Alternating Algorithm</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#first-idea"><span class="nav-number">2.0.2.</span> <span class="nav-text">First Idea</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#operator-scaling"><span class="nav-number">2.0.3.</span> <span class="nav-text">Operator Scaling</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#applications"><span class="nav-number">2.0.4.</span> <span class="nav-text">Applications</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#alternating-algorithm-1"><span class="nav-number">2.0.5.</span> <span class="nav-text">Alternating Algorithm</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#reduction"><span class="nav-number">2.0.6.</span> <span class="nav-text">Reduction</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#the-operator-paulsen-problem"><span class="nav-number">2.0.7.</span> <span class="nav-text">The Operator Paulsen Problem</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#issues-in-first-idea"><span class="nav-number">2.0.8.</span> <span class="nav-text">Issues in First Idea</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#continuous-operator-scaling"><span class="nav-number">2.0.9.</span> <span class="nav-text">Continuous Operator Scaling</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#total-movement"><span class="nav-number">2.0.10.</span> <span class="nav-text">Total Movement</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#error-measure"><span class="nav-number">2.0.11.</span> <span class="nav-text">Error Measure</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#convergence"><span class="nav-number">2.0.12.</span> <span class="nav-text">Convergence</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#local-movement"><span class="nav-number">2.0.13.</span> <span class="nav-text">Local Movement</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#capacity-and-total-movement"><span class="nav-number">2.0.14.</span> <span class="nav-text">Capacity and Total Movement</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#plan"><span class="nav-number">2.0.15.</span> <span class="nav-text">Plan</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#perturbation-process"><span class="nav-number">2.0.16.</span> <span class="nav-text">Perturbation Process</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#reduction-to-matrix-capacity"><span class="nav-number">2.0.17.</span> <span class="nav-text">Reduction to Matrix Capacity</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#new-method-in-capacity-lower-bound"><span class="nav-number">2.0.18.</span> <span class="nav-text">New Method in Capacity Lower Bound</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#pseudorandom-propert"><span class="nav-number">2.0.19.</span> <span class="nav-text">Pseudorandom Propert</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#big-picture"><span class="nav-number">2.0.20.</span> <span class="nav-text">Big Picture</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

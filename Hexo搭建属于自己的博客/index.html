@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"www.yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="封面是我的灵魂绘图">
@@ -208,13 +208,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fwwelmjg3pj317y0u0aos.jpg" width="50%" height="50%">
-
+        <p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fwwelmjg3pj317y0u0aos.jpg" width="50%" height="50%"></p>
 <blockquote>
 <p>封面是我的灵魂绘图</p>
 </blockquote>
 <a id="more"></a>
-
 <p>10月下旬一个中午，隔壁宿舍同学发来了自己建的博客网址，点开发现很有意思，想学习一下，发现网上有的资料很多，傻瓜教程也很多，在四天三夜之后基本建好了，作为一个懒人实在是不想写一篇傻瓜教程，因为网上这方面的资料已经很多了，但是又想留一个参考给以后的自己查阅，顺便整理一下这一路来的思路，中间因为学习方面的事情耽误了一个周，赶上这个月的四天小长假，决定抓住时机把这篇文章补上。</p>
 <p>下面我主要分成四部分：</p>
 <ul>
@@ -223,12 +221,13 @@
 <li>怎么添加博客的自定义效果</li>
 </ul>
 <p>不想看废话的可以直接跳到想看的章节。</p>
-<h1 id="为什么要搭博客"><a href="#为什么要搭博客" class="headerlink" title="为什么要搭博客"></a>为什么要搭博客</h1><p>回答这个问题之前，要先想想另一个问题：</p>
-<h2 id="为什么要写博客"><a href="#为什么要写博客" class="headerlink" title="为什么要写博客"></a>为什么要写博客</h2><p>博客，在如今信息碎片化快餐化的时代，我个人感觉它几乎被埋没了。而且如今自媒体早已从博客转战更加方便快捷且传播力更广的微信公众号上了，所以，现在坚持写博客的人，大多是在<code>“孤芳自赏”</code>吧。</p>
+<h1 id="为什么要搭博客">为什么要搭博客</h1>
+<p>回答这个问题之前，要先想想另一个问题：</p>
+<h2 id="为什么要写博客">为什么要写博客</h2>
+<p>博客，在如今信息碎片化快餐化的时代，我个人感觉它几乎被埋没了。而且如今自媒体早已从博客转战更加方便快捷且传播力更广的微信公众号上了，所以，现在坚持写博客的人，大多是在<code>“孤芳自赏”</code>吧。</p>
 <p>但是搭建博客后有几个我个人认为非常实用的功能：</p>
-<ol>
-<li><p>博客可以是一个私人网络记事本</p>
-</li>
+<ol type="1">
+<li><p>博客可以是一个私人网络记事本</p></li>
 <li><p>从专业的角度来讲，博客是一个巨大的参考库，每次我在学习上遇到问题时，搜索结果中给出最靠谱答案的地方只有三处：</p>
 <ul>
 <li>官方文档</li>
@@ -240,32 +239,29 @@
 <p>在遇到问题解决问题以后，程序员习惯将整个过程通过博客记录下来，方便以后自己突然忘记了，就翻出来看看，如今的markdown语言排版十分便捷，而且对代码展现十分友好，技术博客一直还可以。</p>
 </blockquote>
 <p>在技术博客中，博主会清晰的表述自己在操作整个过程中的思路和遇到的问题，你会很容易吸收和理解。</p>
-<p>举个不恰当的例子：我在写一份试卷，写完之后，我先去找<code>标准答案</code>（官方文档），发现有些题我做错了，但是我不知道我哪里做错了，参考答案上没有给写出细致的解题步骤。这时我就要先去问<code>同班同学</code>（论坛），大家一起相互讨论，但是发现同学们要不就是错的和我不一样，要不就是懒的给我解释我错在哪。最后，我只能求助<code>上届学长</code>（技术博客），学长果然老司机，当年的考试题都写在了本子上，满满的解题步骤从头到尾滴水不漏，你一看便发现了自己错在哪里了，问题解决。</p>
-</li>
-<li><p>在工作方面，博客可以作为面试的加分项。</p>
-</li>
+<p>举个不恰当的例子：我在写一份试卷，写完之后，我先去找<code>标准答案</code>（官方文档），发现有些题我做错了，但是我不知道我哪里做错了，参考答案上没有给写出细致的解题步骤。这时我就要先去问<code>同班同学</code>（论坛），大家一起相互讨论，但是发现同学们要不就是错的和我不一样，要不就是懒的给我解释我错在哪。最后，我只能求助<code>上届学长</code>（技术博客），学长果然老司机，当年的考试题都写在了本子上，满满的解题步骤从头到尾滴水不漏，你一看便发现了自己错在哪里了，问题解决。</p></li>
+<li><p>在工作方面，博客可以作为面试的加分项。</p></li>
 </ol>
 <p>回到第一个问题，为什么要搭blog，现在的第三方blog平台很多，比如csdn、简书，LOFTER等等。虽然，第三方blog平台存在着广告，自定义程度极弱，数据可能不安全的问题，但是对于重视内容创作的博主来讲，第三方blog有着超级人性化的UI，提供了庞大的用户基础，可以让自己的文章让更多的人看到，更容易推广出去。如果不想费劲捯饬博客，使用第三方平台是个不错的选择，但是如果你吃饱了没事干，或者你是一个计算机专业的从业人员，尝试一下自己搭建博客是很有必要的。就拿我个人的搭建经历来说，在使用HEXO的过程中，我从一无所知，逐渐认识了html+css+js的前端语言，了解了json格式的配置文件，认识了markdon这种快速书写格式的标记语言、GitHub这种开源的代码分享存储网站。这些工具和经验，或多或少都会在以后的工作中碰到，提前认识一下不是件坏事。</p>
-<h1 id="怎么搭一个Hexo框架的博客"><a href="#怎么搭一个Hexo框架的博客" class="headerlink" title="怎么搭一个Hexo框架的博客"></a>怎么搭一个Hexo框架的博客</h1><p>本着不写傻瓜教程的懒人原则，我只写下各个步骤，然后留下具体教程的网站。<code>其实所有的东西，在官方的配置文件中都写的明明白白，只要英语不差，仔细阅读，并不需要什么高深的逻辑和数学知识，别想的太难。</code></p>
-<h2 id="学会上外网"><a href="#学会上外网" class="headerlink" title="学会上外网"></a>学会上外网</h2><p>想要快速搭blog可以跳过此步，不过还是强烈建议大学生们上学掌握的第一项技术就是“翻墙”。光是一个Google搜索引擎所带来的收益绝对够回你租vps的本钱。</p>
+<h1 id="怎么搭一个hexo框架的博客">怎么搭一个Hexo框架的博客</h1>
+<p>本着不写傻瓜教程的懒人原则，我只写下各个步骤，然后留下具体教程的网站。<code>其实所有的东西，在官方的配置文件中都写的明明白白，只要英语不差，仔细阅读，并不需要什么高深的逻辑和数学知识，别想的太难。</code></p>
+<h2 id="学会上外网">学会上外网</h2>
+<p>想要快速搭blog可以跳过此步，不过还是强烈建议大学生们上学掌握的第一项技术就是“翻墙”。光是一个Google搜索引擎所带来的收益绝对够回你租vps的本钱。</p>
 <p>核心思路：</p>
 <ul>
 <li><p>租借一个虚拟专用服务器（<em>Virtual Private Server</em>），下面简称VPS</p>
 <blockquote>
-<p> 这个教程很多，步骤很简单，我就不附上网址了，推荐国外的搬瓦工，官方网址<a href="https://bandwagonhost.com/" target="_blank" rel="noopener">https://bandwagonhost.com/</a></p>
-</blockquote>
-</li>
-<li><p>去GitHub下载Shadowsocks，下面简称ss</p>
-</li>
-<li><p>配置VPS的各种参数，在VPS（服务器端）上安装好ss，具体教程参考：<a href="https://blog.huihut.com/2016/12/03/BandwagonShadowsocksServer/" target="_blank" rel="noopener">https://blog.huihut.com/2016/12/03/BandwagonShadowsocksServer/</a></p>
+<p>这个教程很多，步骤很简单，我就不附上网址了，推荐国外的搬瓦工，官方网址https://bandwagonhost.com/</p>
+</blockquote></li>
+<li><p>去GitHub下载Shadowsocks，下面简称ss</p></li>
+<li><p>配置VPS的各种参数，在VPS（服务器端）上安装好ss，具体教程参考：https://blog.huihut.com/2016/12/03/BandwagonShadowsocksServer/</p>
 <blockquote>
 <p>这一步是最不容易理解的，以前搬瓦工的服务器是自带安装ss服务的，现在没有了，需要在VPS上手动输入命令来安装，具体在教程里也有写。</p>
-</blockquote>
-</li>
-<li><p>打开你电脑上下载好的ss，配置服务器，将ip、端口、密码等等输入后，即可使用了。</p>
-</li>
+</blockquote></li>
+<li><p>打开你电脑上下载好的ss，配置服务器，将ip、端口、密码等等输入后，即可使用了。</p></li>
 </ul>
-<h2 id="搭建HEXOblog"><a href="#搭建HEXOblog" class="headerlink" title="搭建HEXOblog"></a>搭建HEXOblog</h2><p>如果你完成了第一步，那么下面的工作你完全可以自己完成了，去Google把我的标题搜索一下就可以了，我只能说我是懒人中的懒人，在此我附上另一个懒人整理的别人搭blog的教程：<a href="http://jmyblog.top/Hexo-GithubPages-CodingPages%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">http://jmyblog.top/Hexo-GithubPages-CodingPages%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</a></p>
+<h2 id="搭建hexoblog">搭建HEXOblog</h2>
+<p>如果你完成了第一步，那么下面的工作你完全可以自己完成了，去Google把我的标题搜索一下就可以了，我只能说我是懒人中的懒人，在此我附上另一个懒人整理的别人搭blog的教程：http://jmyblog.top/Hexo-GithubPages-CodingPages%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</p>
 <p>全文写的十分详细，我只把提纲提炼出来，抓几个点说一说：</p>
 <p>1.获得个人网站域名</p>
 <blockquote>
@@ -286,47 +282,57 @@
 </blockquote>
 <p>6.推送网站</p>
 <blockquote>
-<p>这里需要去hexo的安装目录下找到<code>_config.yml</code>    文件，这个文件在之后的自定义环节也会用到，在主题网站Next上也会详细的介绍站点配置文件与主题配置文件。打开之后会发现里面的参数很容易理解，后面自定义的很多工作，大部分都是在这里（比如添加2Dlive、更改主题文件、添加本地搜索，添加emoji表情等等）和主题配置文件里完成的。</p>
+<p>这里需要去hexo的安装目录下找到<code>_config.yml</code> 文件，这个文件在之后的自定义环节也会用到，在主题网站Next上也会详细的介绍站点配置文件与主题配置文件。打开之后会发现里面的参数很容易理解，后面自定义的很多工作，大部分都是在这里（比如添加2Dlive、更改主题文件、添加本地搜索，添加emoji表情等等）和主题配置文件里完成的。</p>
 </blockquote>
 <p>7.绑定域名</p>
 <p>8.在coding或GitHub上部署你的网站。</p>
 <blockquote>
 <p>coding是被腾讯收购的一个类似GitHub的网站，如果不翻墙的话，访问的速度要比GitHub快很多。我是把GitHub和coding都部署了，这样每次发blog时，如果出错了，可以通过对比两个网站来排查问题。</p>
 </blockquote>
-<h3 id="写blog，发blog"><a href="#写blog，发blog" class="headerlink" title="写blog，发blog"></a>写blog，发blog</h3><p>其实到这里，你就可以开始写你的blog了，使用hexo的基本命令去创建md文件，然后使用md语言来写文章，使用hexo命令生成html文件，然后部署到GitHub上，就可以在浏览器里，输入你的博客网址，查看你的blog了。</p>
+<h3 id="写blog发blog">写blog，发blog</h3>
+<p>其实到这里，你就可以开始写你的blog了，使用hexo的基本命令去创建md文件，然后使用md语言来写文章，使用hexo命令生成html文件，然后部署到GitHub上，就可以在浏览器里，输入你的博客网址，查看你的blog了。</p>
 <p>但是之所以搭blog，为的是就是自定义功能，把自己的网址做的很个性。</p>
-<h1 id="如何自定义blog"><a href="#如何自定义blog" class="headerlink" title="如何自定义blog"></a>如何自定义blog</h1><p>自己搭建的blog个人认为最大的好处有两个：</p>
+<h1 id="如何自定义blog">如何自定义blog</h1>
+<p>自己搭建的blog个人认为最大的好处有两个：</p>
 <ul>
 <li>相对的安全：数据全在本地电脑上，每次修改更新，都需要从本地上传，别人能篡改你blog的可能性几乎为0</li>
 <li>超级强大的自定义功能：你的blog说白了，只是几个文件。然后通过渲染器的渲染，呈现出你所访问的网页的效果，对于一个网页，离不开html+css+js的格式，对于第三方blog平台，这些文件都是固定的一般禁止用户去访问修改，但是对于你自己搭建的blog，这些文件全部存储在本地，你完全可以自由发挥。</li>
 </ul>
 <blockquote>
-<p> 我打个不恰当的比方：第三方blog平台是别人盖好装修好的房子租给你，允许你在里面吃喝拉撒，但是不能动房子的一砖一瓦；但是hexo是别人给了你一个毛坯房，你可以在里面放飞自我的装修，加这个加那个，但前提是不能把房子拆了重新改，房子的整体结构不能变；而还有一种就是纯粹的从零开始盖房子，所有的东西都要自己造，这种行话叫“造轮子”，造轮子其实就是在重复一些十分低级且工作量巨大的工作，这在程序员之前是极不推崇的。</p>
+<p>我打个不恰当的比方：第三方blog平台是别人盖好装修好的房子租给你，允许你在里面吃喝拉撒，但是不能动房子的一砖一瓦；但是hexo是别人给了你一个毛坯房，你可以在里面放飞自我的装修，加这个加那个，但前提是不能把房子拆了重新改，房子的整体结构不能变；而还有一种就是纯粹的从零开始盖房子，所有的东西都要自己造，这种行话叫“造轮子”，造轮子其实就是在重复一些十分低级且工作量巨大的工作，这在程序员之前是极不推崇的。</p>
 </blockquote>
-<h2 id="设置主题"><a href="#设置主题" class="headerlink" title="设置主题"></a>设置主题</h2><p>hexo里最火的主题便是next，官方网址<a href="https://theme-next.iissnan.com/" target="_blank" rel="noopener">https://theme-next.iissnan.com/</a> GitHub阅读文档<a href="https://github.com/iissnan/hexo-theme-next/blob/master/README.cn.md" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next/blob/master/README.cn.md</a></p>
+<h2 id="设置主题">设置主题</h2>
+<p>hexo里最火的主题便是next，官方网址https://theme-next.iissnan.com/ GitHub阅读文档https://github.com/iissnan/hexo-theme-next/blob/master/README.cn.md</p>
 <p>当然主题还有很多种，但是NexT因为使用的人很多，所以功能也很完备，很多个性化功能配置起来很方便。</p>
-<p>但是大家都用的话，所谓个性也就不复存在了，这里还有一些其他好看的主题，你可以在使用NexT熟练修改各种配置之后，尝试一些别的主题<a href="https://www.zhihu.com/question/24422335" target="_blank" rel="noopener">https://www.zhihu.com/question/24422335</a></p>
+<p>但是大家都用的话，所谓个性也就不复存在了，这里还有一些其他好看的主题，你可以在使用NexT熟练修改各种配置之后，尝试一些别的主题https://www.zhihu.com/question/24422335</p>
 <p>在第二节（我上面发的<a href="http://jmyblog.top/Hexo-GithubPages-CodingPages%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">链接</a>中）其实已经有很多自定义效果的教程了，我也基本上试用了大部分，但是随着我对配置文件的深入阅读，我发现其实很多功能已经过时了，在主题的配置文件中已经提供了大部分功能，只需要选择开启并修改参数就可以了。</p>
 <p>这里我简单的讲一下如何阅读配置文件。</p>
 <ul>
 <li>首先找到主题文件夹中的你下载的主题文件中的<code>_config.yml</code>，我使用的是NexT</li>
 </ul>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fzqz1sf2tjj30z80l8djj.jpg" alt="image-20190201154932034"></p>
+<figure>
+<img src="https://ws2.sinaimg.cn/large/006tNc79ly1fzqz1sf2tjj30z80l8djj.jpg" alt="" /><figcaption>image-20190201154932034</figcaption>
+</figure>
 <ul>
 <li>你可以安装一个notepad++（mac我用xcode感觉就挺不错，sublime也行）或者其他文本编辑器，方便你看各种格式的代码。打开配置文件。</li>
 </ul>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzqz5msalxj318v0u0akt.jpg" alt="image-20190201155316026"></p>
+<figure>
+<img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzqz5msalxj318v0u0akt.jpg" alt="" /><figcaption>image-20190201155316026</figcaption>
+</figure>
 <ul>
 <li>其实认真读读带井号的注释就可以看懂每个关键字都是什么作用，比如下面这段</li>
 </ul>
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzr94eaeedj30xy0aajsn.jpg" alt="image-20190201213804724"></p>
+<figure>
+<img src="https://ws1.sinaimg.cn/large/006tNc79ly1fzr94eaeedj30xy0aajsn.jpg" alt="" /><figcaption>image-20190201213804724</figcaption>
+</figure>
 <blockquote>
 <p>这里下面的四种主题，选择哪种，就把哪种前面的#号去掉，从注视改为代码行即可。</p>
 </blockquote>
-<h2 id="自定义过程的经验总结"><a href="#自定义过程的经验总结" class="headerlink" title="自定义过程的经验总结"></a>自定义过程的经验总结</h2><p>在自定义中，有很多功能是配置文件中已经自带的，代码也都写好了，只需要把代码行的注释符号去掉，或者把参数改成on即可，其中评论功能比较麻烦。来必力不错，但是反应有点慢，而且风格和我的主题不搭，最后我选择了gitment，但是gitment需要在GitHub中配置一个项目来存评论，比较麻烦。然后再是mathjax选项，为了让blog支持数学公式，必须打开配置文件中的mathjax功能，然而，有些符号在markdown中会和html冲突，这里需要更换渲染器，我最终找到了格式切换的瑞士军刀–pandoc，pandoc几乎支持所有格式的相互转化，在GitHub中找到一个pandoc类型的渲染器，然后用命令行把原本的渲染器换掉。2d-live功能（就是我blog右下角的小猫咪）是GitHub上的一个开源项目，next并不自带，官方文档也有中文的，感兴趣的也可以自己去琢磨一下。</p>
-<h1 id="8说了，开冲！"><a href="#8说了，开冲！" class="headerlink" title="8说了，开冲！"></a>8说了，开冲！</h1><p>上面的设置设置好后，基本这个blog就可以完美适配各种类型的文章了，打开自己本地的hexo文件夹中的post文件夹，新建一个md文件，把标题格式写标准，就可以开始写blog，写完之后在终端命令行里一套连招：</p>
+<h2 id="自定义过程的经验总结">自定义过程的经验总结</h2>
+<p>在自定义中，有很多功能是配置文件中已经自带的，代码也都写好了，只需要把代码行的注释符号去掉，或者把参数改成on即可，其中评论功能比较麻烦。来必力不错，但是反应有点慢，而且风格和我的主题不搭，最后我选择了gitment，但是gitment需要在GitHub中配置一个项目来存评论，比较麻烦。然后再是mathjax选项，为了让blog支持数学公式，必须打开配置文件中的mathjax功能，然而，有些符号在markdown中会和html冲突，这里需要更换渲染器，我最终找到了格式切换的瑞士军刀--pandoc，pandoc几乎支持所有格式的相互转化，在GitHub中找到一个pandoc类型的渲染器，然后用命令行把原本的渲染器换掉。2d-live功能（就是我blog右下角的小猫咪）是GitHub上的一个开源项目，next并不自带，官方文档也有中文的，感兴趣的也可以自己去琢磨一下。</p>
+<h1 id="说了开冲">8说了，开冲！</h1>
+<p>上面的设置设置好后，基本这个blog就可以完美适配各种类型的文章了，打开自己本地的hexo文件夹中的post文件夹，新建一个md文件，把标题格式写标准，就可以开始写blog，写完之后在终端命令行里一套连招：</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="formula">$hexo g</span></span><br><span class="line"><span class="formula">$</span>hexo d</span><br></pre></td></tr></table></figure>
-
 <p>然后打开对应的网页，就可以访问自己的blog啦！</p>
 
     </div>
@@ -415,7 +421,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要搭博客"><span class="nav-number">1.</span> <span class="nav-text">为什么要搭博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要写博客"><span class="nav-number">1.1.</span> <span class="nav-text">为什么要写博客</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎么搭一个Hexo框架的博客"><span class="nav-number">2.</span> <span class="nav-text">怎么搭一个Hexo框架的博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#学会上外网"><span class="nav-number">2.1.</span> <span class="nav-text">学会上外网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建HEXOblog"><span class="nav-number">2.2.</span> <span class="nav-text">搭建HEXOblog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#写blog，发blog"><span class="nav-number">2.2.1.</span> <span class="nav-text">写blog，发blog</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何自定义blog"><span class="nav-number">3.</span> <span class="nav-text">如何自定义blog</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置主题"><span class="nav-number">3.1.</span> <span class="nav-text">设置主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义过程的经验总结"><span class="nav-number">3.2.</span> <span class="nav-text">自定义过程的经验总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8说了，开冲！"><span class="nav-number">4.</span> <span class="nav-text">8说了，开冲！</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要搭博客"><span class="nav-number">1.</span> <span class="nav-text">为什么要搭博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要写博客"><span class="nav-number">1.1.</span> <span class="nav-text">为什么要写博客</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎么搭一个hexo框架的博客"><span class="nav-number">2.</span> <span class="nav-text">怎么搭一个Hexo框架的博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#学会上外网"><span class="nav-number">2.1.</span> <span class="nav-text">学会上外网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建hexoblog"><span class="nav-number">2.2.</span> <span class="nav-text">搭建HEXOblog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#写blog发blog"><span class="nav-number">2.2.1.</span> <span class="nav-text">写blog，发blog</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何自定义blog"><span class="nav-number">3.</span> <span class="nav-text">如何自定义blog</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置主题"><span class="nav-number">3.1.</span> <span class="nav-text">设置主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义过程的经验总结"><span class="nav-number">3.2.</span> <span class="nav-text">自定义过程的经验总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#说了开冲"><span class="nav-number">4.</span> <span class="nav-text">8说了，开冲！</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

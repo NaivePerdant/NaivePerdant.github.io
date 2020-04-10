@@ -17,15 +17,15 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"www.yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="machine learning 概览machine learning是一个很大的理论体系，目前分为下面几类：">
+  <meta name="description" content="machine learning 概览 machine learning是一个很大的理论体系，目前分为下面几类：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Machine Learing 课程笔记">
 <meta property="og:url" content="https://www.yoursite.com/Machine-Learing/index.html">
 <meta property="og:site_name" content="Coding Poet">
-<meta property="og:description" content="machine learning 概览machine learning是一个很大的理论体系，目前分为下面几类：">
+<meta property="og:description" content="machine learning 概览 machine learning是一个很大的理论体系，目前分为下面几类：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fwttwjk4ovj31kw0ijdic.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fwttwkc0prj312b1pl439.jpg">
@@ -200,38 +200,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="machine-learning-概览"><a href="#machine-learning-概览" class="headerlink" title="machine learning 概览"></a>machine learning 概览</h1><p>machine learning是一个很大的理论体系，目前分为下面几类：<br><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fwttwjk4ovj31kw0ijdic.jpg" alt="learning map"></p>
+        <h1 id="machine-learning-概览">machine learning 概览</h1>
+<p>machine learning是一个很大的理论体系，目前分为下面几类： <img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fwttwjk4ovj31kw0ijdic.jpg" alt="learning map" /></p>
 <a id="more"></a>
-
-
-<p>&emsp;&emsp;这里重点学习supervised learning，特点是训练集会附带label（正确的结果），模型会根据output与label比较，来不断调整自我调整。其中regression的output是scale（值）；classification的output是class；structured learning的output远高级于前两者，比如语音识别的output是一段文字，人脸识别的output是一个人的信息等等类似这些复杂的output。</p>
-<p>&emsp;&emsp;但是在现实场景中，很难搜集到大量的标有label的data set，这时我们一般采用semi-supervised learning。即data中既有labeled又有unlabeled。<br>&emsp;&emsp;如果data set中既有labeled又有unlabeled，并且还有not related to the task的data，这里引入了Transfer Learning。<br>&emsp;&emsp;而unsupervised learning就更厉害了，直接扔给machine一堆data，让machine自己去“读”，我个人理解为，给我（机器）一千本小说看，看完后我（机器）自己也可以写出一本小说。。。<br>&emsp;&emsp;最后一个reinforcement learning，是不会给机器的output一个确切的对错，而是给它一个分值，类似一个赏罚制度，machine在learning的过程中，output出了不错的结果时，会得到奖励，坏的结果会得到惩罚，久而久之，machine就根据这个来调整model。大热的阿尔法GO就是加入了reinforcement learning，DOTA2的openAI好像也是。</p>
-<h1 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fwttwkc0prj312b1pl439.jpg" alt="Linear Regression"><br>其实就是分为三步：</p>
+<p>  这里重点学习supervised learning，特点是训练集会附带label（正确的结果），模型会根据output与label比较，来不断调整自我调整。其中regression的output是scale（值）；classification的output是class；structured learning的output远高级于前两者，比如语音识别的output是一段文字，人脸识别的output是一个人的信息等等类似这些复杂的output。</p>
+<p>  但是在现实场景中，很难搜集到大量的标有label的data set，这时我们一般采用semi-supervised learning。即data中既有labeled又有unlabeled。   如果data set中既有labeled又有unlabeled，并且还有not related to the task的data，这里引入了Transfer Learning。   而unsupervised learning就更厉害了，直接扔给machine一堆data，让machine自己去“读”，我个人理解为，给我（机器）一千本小说看，看完后我（机器）自己也可以写出一本小说。。。   最后一个reinforcement learning，是不会给机器的output一个确切的对错，而是给它一个分值，类似一个赏罚制度，machine在learning的过程中，output出了不错的结果时，会得到奖励，坏的结果会得到惩罚，久而久之，machine就根据这个来调整model。大热的阿尔法GO就是加入了reinforcement learning，DOTA2的openAI好像也是。</p>
+<h1 id="linear-regression">Linear Regression</h1>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fwttwkc0prj312b1pl439.jpg" alt="Linear Regression" /> 其实就是分为三步：</p>
 <ul>
-<li>函数集<ul>
-<li>函数集是一些线性函数的集合，根据feature来定，比如一次多项式$f = w_1x_1+w_2x_2+w_3x_3$，二次多项式$f = w_1x_1^2+w_2x_2^2+w_3x_3^2$，三次多项式$f = w_1x_1^3+w_2x_2^3+w_3x_3^3$等。</li>
+<li>函数集</li>
+<li>函数集是一些线性函数的集合，根据feature来定，比如一次多项式<span class="math inline">\(f = w_1x_1+w_2x_2+w_3x_3\)</span>，二次多项式<span class="math inline">\(f = w_1x_1^2+w_2x_2^2+w_3x_3^2\)</span>，三次多项式<span class="math inline">\(f = w_1x_1^3+w_2x_2^3+w_3x_3^3\)</span>等。</li>
+<li>评判函数的好坏</li>
+<li>第二步中，我们定义一个loss function<span class="math display">\[L(f) = \sum_{j=1}^{n}{(\hat{y}^j-f(x_i^j))^2}\]</span> 其中，j表示第j条input，i代表一共有i种feature，<span class="math inline">\(\hat{y}\)</span>表示training data的实际观测值，<span class="math inline">\(f(x_i^j)\)</span>表示training data 的预测值 <span class="math inline">\(L(f)\)</span>表示output与training data的差距，而最好的function就是使<span class="math inline">\(L(f)\)</span>最小的function。</li>
+<li>找到最好的函数</li>
+<li>第三步是最重要且复杂的一步（公式太复杂懒得markdown了直接看图吧= =），通俗的讲，find function的过程实际就是找function的各项weight的过程，这里主要使用的是gradient descent，一步步的调成weight的大小，直至找到min <span class="math inline">\(L(f)\)</span>。在这里，又介绍了集中优化gradient descent的方法：例如ada grad、stochastic和scaling。</li>
 </ul>
-</li>
-<li>评判函数的好坏<ul>
-<li>第二步中，我们定义一个loss function$$L(f) = \sum_{j=1}^{n}{(\hat{y}^j-f(x_i^j))^2}$$  其中，j表示第j条input，i代表一共有i种feature，$\hat{y}$表示training data的实际观测值，$f(x_i^j)$表示training data 的预测值 $L(f)$表示output与training data的差距，而最好的function就是使$L(f)$最小的function。</li>
-</ul>
-</li>
-<li>找到最好的函数 <ul>
-<li>第三步是最重要且复杂的一步（公式太复杂懒得markdown了直接看图吧= =），通俗的讲，find function的过程实际就是找function的各项weight的过程，这里主要使用的是gradient descent，一步步的调成weight的大小，直至找到min $L(f)$。在这里，又介绍了集中优化gradient descent的方法：例如ada grad、stochastic和scaling。</li>
-</ul>
-</li>
-</ul>
-<h1 id="Classifier"><a href="#Classifier" class="headerlink" title="Classifier"></a>Classifier</h1><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fwttwktwinj316t1gzwj2.jpg" alt="Classifier"><br>大致步骤和regression一样，都是三步走。<br>不同的是：</p>
+<h1 id="classifier">Classifier</h1>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fwttwktwinj316t1gzwj2.jpg" alt="Classifier" /> 大致步骤和regression一样，都是三步走。 不同的是：</p>
 <ul>
-<li>function set不一样，classifier目的在于，求出某一条data属于各个类的概率，概率最大的即使该条data的  class，这里使用了本科学习的贝叶斯公式（先验概率后验概率啥的，不会的谷歌吧。。。）</li>
-<li>goodness of function 也不一样，这里定义likelihood function，即把training data中属于class1的所有data放入函数$f_{\mu,\Sigma}(x_i^j)$得到属于class1的联合概率密度最大，说明这个function 预测的效果最好，因为这些data实际观测值就是class1，当然属于class1的概率越大越好，所以这里是寻找使$L(\mu,\Sigma)$最大的function。</li>
-<li>最后$\mu,\Sigma$确定了，套公式带进function里就ok啦。</li>
+<li>function set不一样，classifier目的在于，求出某一条data属于各个类的概率，概率最大的即使该条data的 class，这里使用了本科学习的贝叶斯公式（先验概率后验概率啥的，不会的谷歌吧。。。）</li>
+<li>goodness of function 也不一样，这里定义likelihood function，即把training data中属于class1的所有data放入函数<span class="math inline">\(f_{\mu,\Sigma}(x_i^j)\)</span>得到属于class1的联合概率密度最大，说明这个function 预测的效果最好，因为这些data实际观测值就是class1，当然属于class1的概率越大越好，所以这里是寻找使<span class="math inline">\(L(\mu,\Sigma)\)</span>最大的function。</li>
+<li>最后<span class="math inline">\(\mu,\Sigma\)</span>确定了，套公式带进function里就ok啦。</li>
 </ul>
 <p>这一课主要是粗略的讲了一下classifier的大体工作流程，为的是下一课的logistic regression过渡。</p>
-<h1 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h1><p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fwttwjz1atj31kw1c211i.jpg" alt="Logistic Regression"><br>&emsp;&emsp;logistic regression是classification中的一种，主要的细节在于，classifier第二步求的是max likelihood function，但是logistic regression通过一个变换$-ln(likelihood)$使得本身求max L变为求min $-ln(likelihood)$，这样就和regression中的求min loss function类似啦，可以使用gradient descent。<br>这里有一点不同：</p>
+<h1 id="logistic-regression">Logistic Regression</h1>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fwttwjz1atj31kw1c211i.jpg" alt="Logistic Regression" />   logistic regression是classification中的一种，主要的细节在于，classifier第二步求的是max likelihood function，但是logistic regression通过一个变换<span class="math inline">\(-ln(likelihood)\)</span>使得本身求max L变为求min <span class="math inline">\(-ln(likelihood)\)</span>，这样就和regression中的求min loss function类似啦，可以使用gradient descent。 这里有一点不同：</p>
 <ul>
-<li>在$-ln(likelihood)$化简后，得到一个类似regression中的loss function的式子，同样是求最小值，但是在前面第二课学的regression中，loss function 其实是一个square error（方差），这里的loss function是cross entropy，二者还是有区别的。</li>
-<li>为什么logistic regression 不使用square error呢？有兴趣的可以看看这个视频，讲的很仔细，<a href="https://www.youtube.com/watch?v=hSXFuypLukA" target="_blank" rel="noopener">从24:30开始看</a>&ensp;粗略的讲一下，就是gradient descent过程中，cross entropy函数很陡，离最低点越远的地方，偏微分也很大，update移动速度很快，离目标很近时，偏微分很小，这是update移动速度变慢，这是正常的。但是square error 的图像在离最低点很远的地方也出现了很平缓的现象，这导致偏微分很小，update移动速度非常非常慢，而且，你无法保证当前微分很小的地方是离目标很近的地方还是离目标很远的地方，所以只能慢慢等结果。。。程序跑的奇慢无比 = =</li>
+<li>在<span class="math inline">\(-ln(likelihood)\)</span>化简后，得到一个类似regression中的loss function的式子，同样是求最小值，但是在前面第二课学的regression中，loss function 其实是一个square error（方差），这里的loss function是cross entropy，二者还是有区别的。</li>
+<li>为什么logistic regression 不使用square error呢？有兴趣的可以看看这个视频，讲的很仔细，<a href="https://www.youtube.com/watch?v=hSXFuypLukA" target="_blank" rel="noopener">从24:30开始看</a> 粗略的讲一下，就是gradient descent过程中，cross entropy函数很陡，离最低点越远的地方，偏微分也很大，update移动速度很快，离目标很近时，偏微分很小，这是update移动速度变慢，这是正常的。但是square error 的图像在离最低点很远的地方也出现了很平缓的现象，这导致偏微分很小，update移动速度非常非常慢，而且，你无法保证当前微分很小的地方是离目标很近的地方还是离目标很远的地方，所以只能慢慢等结果。。。程序跑的奇慢无比 = =</li>
 </ul>
 
     </div>
@@ -318,7 +314,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#machine-learning-概览"><span class="nav-number">1.</span> <span class="nav-text">machine learning 概览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linear-Regression"><span class="nav-number">2.</span> <span class="nav-text">Linear Regression</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Classifier"><span class="nav-number">3.</span> <span class="nav-text">Classifier</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logistic-Regression"><span class="nav-number">4.</span> <span class="nav-text">Logistic Regression</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#machine-learning-概览"><span class="nav-number">1.</span> <span class="nav-text">machine learning 概览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linear-regression"><span class="nav-number">2.</span> <span class="nav-text">Linear Regression</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#classifier"><span class="nav-number">3.</span> <span class="nav-text">Classifier</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#logistic-regression"><span class="nav-number">4.</span> <span class="nav-text">Logistic Regression</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
