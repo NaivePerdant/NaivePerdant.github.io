@@ -1,69 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>H：希伯特空间</title>
-    <url>/H%EF%BC%9A%E5%B8%8C%E4%BC%AF%E7%89%B9%E7%A9%BA%E9%97%B4/</url>
-    <content><![CDATA[<p>H：希伯特空间</p>
-<p>F：H的子集</p>
-<p>F成为frame</p>
-<p>parseval frame/normalized tight frame</p>
-<p>equal norm frame</p>
-<p>V：映射/变换 analysis operator <span class="math display">\[
-V = 
-\begin{bmatrix}
-    f_1\\
-    f_2\\
-    ...\\
-    f_n\\
-\end{bmatrix}
-\]</span></p>
-<p><span class="math display">\[
-f_i = 
-\begin{bmatrix}
-    f_{1i}&amp;f_{2i}&amp;...&amp;f_{ni}
-\end{bmatrix}
-\quad
-x = 
-\begin{bmatrix}
-    x_1\\
-    x_2\\
-    ...\\
-    x_n\\
-\end{bmatrix}
-\]</span></p>
-<p>当F parseval 时，V等距同构、保距映射（正交矩阵/酉矩阵），且V的伴随矩阵V*是V的左逆矩阵 <span class="math display">\[
-(Vx)_i=&lt;x,f_i&gt;\\
-\sum|&lt;x,f_i&gt;|^2=\sum|(Vx)_i|^2 = \|x\|^2\\
-\|{\begin{bmatrix}
-f_1x\\
-f_2x\\
-...\\
-f_nx\\
-\end{bmatrix}}\|=
-\|{\begin{bmatrix}
-x_1\\
-x_2\\
-...\\
-x_n\\
-\end{bmatrix}}\|\\
-\|Vx\|=\|x\|\\
-det(V)=1
-\]</span></p>
-<p><span class="math display">\[
-V^*V = det(V)I=I\\
-V^*=V^{-1}=V^T
-\]</span></p>
-<p>因为V是正交矩阵/酉矩阵，所以<span class="math inline">\(V^{-1}=V^T\)</span>又因为<span class="math inline">\(V^*V=I\)</span></p>
-<p>所以每一个frame对应一个矩阵V，V*的列就是向量</p>
-<p>F：一个基域</p>
-<p>f（n，k）：所有k维的F域n个向量构成的paseval frame的集合</p>
-<p><span class="math inline">\(VV^*\)</span>是向量组内积对称矩阵，格拉姆矩阵（Grammian matrix）且是投影矩阵</p>
-<p>投影矩阵都是幂等矩阵满足：</p>
-<p><font color=red>矩阵的秩等于它的迹</font></p>
-<p>F和G两组frame，当且仅当存在酉矩阵U使得<span class="math inline">\(UVV^*U^*=WW^*\)</span>，则<span class="math inline">\(\{f_i\}\quad and\quad \{g_i\}\quad is \quad equivalent\)</span></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Java_JVM内存分析</title>
     <url>/Java-JVM%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fyk9dhn3rkj30lc0sgjzc.jpg" width="50%" height="50%"></p>
@@ -321,6 +258,69 @@ V^*=V^{-1}=V^T
         <tag>GitHub</tag>
         <tag>Next</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>H：希伯特空间</title>
+    <url>/H%EF%BC%9A%E5%B8%8C%E4%BC%AF%E7%89%B9%E7%A9%BA%E9%97%B4/</url>
+    <content><![CDATA[<p>H：希伯特空间</p>
+<p>F：H的子集</p>
+<p>F成为frame</p>
+<p>parseval frame/normalized tight frame</p>
+<p>equal norm frame</p>
+<p>V：映射/变换 analysis operator <span class="math display">\[
+V = 
+\begin{bmatrix}
+    f_1\\
+    f_2\\
+    ...\\
+    f_n\\
+\end{bmatrix}
+\]</span></p>
+<p><span class="math display">\[
+f_i = 
+\begin{bmatrix}
+    f_{1i}&amp;f_{2i}&amp;...&amp;f_{ni}
+\end{bmatrix}
+\quad
+x = 
+\begin{bmatrix}
+    x_1\\
+    x_2\\
+    ...\\
+    x_n\\
+\end{bmatrix}
+\]</span></p>
+<p>当F parseval 时，V等距同构、保距映射（正交矩阵/酉矩阵），且V的伴随矩阵V*是V的左逆矩阵 <span class="math display">\[
+(Vx)_i=&lt;x,f_i&gt;\\
+\sum|&lt;x,f_i&gt;|^2=\sum|(Vx)_i|^2 = \|x\|^2\\
+\|{\begin{bmatrix}
+f_1x\\
+f_2x\\
+...\\
+f_nx\\
+\end{bmatrix}}\|=
+\|{\begin{bmatrix}
+x_1\\
+x_2\\
+...\\
+x_n\\
+\end{bmatrix}}\|\\
+\|Vx\|=\|x\|\\
+det(V)=1
+\]</span></p>
+<p><span class="math display">\[
+V^*V = det(V)I=I\\
+V^*=V^{-1}=V^T
+\]</span></p>
+<p>因为V是正交矩阵/酉矩阵，所以<span class="math inline">\(V^{-1}=V^T\)</span>又因为<span class="math inline">\(V^*V=I\)</span></p>
+<p>所以每一个frame对应一个矩阵V，V*的列就是向量</p>
+<p>F：一个基域</p>
+<p>f（n，k）：所有k维的F域n个向量构成的paseval frame的集合</p>
+<p><span class="math inline">\(VV^*\)</span>是向量组内积对称矩阵，格拉姆矩阵（Grammian matrix）且是投影矩阵</p>
+<p>投影矩阵都是幂等矩阵满足：</p>
+<p><font color=red>矩阵的秩等于它的迹</font></p>
+<p>F和G两组frame，当且仅当存在酉矩阵U使得<span class="math inline">\(UVV^*U^*=WW^*\)</span>，则<span class="math inline">\(\{f_i\}\quad and\quad \{g_i\}\quad is \quad equivalent\)</span></p>
+]]></content>
   </entry>
   <entry>
     <title>Solution to the Paulsen problem(via operator scaling)</title>
@@ -837,6 +837,31 @@ x &amp;= a +b+c+d\\
       </tags>
   </entry>
   <entry>
+    <title>《飞驰人生》</title>
+    <url>/%E9%A3%9E%E9%A9%B0%E4%BA%BA%E7%94%9F/</url>
+    <content><![CDATA[<figure>
+<img src="https://ws2.sinaimg.cn/large/006tNc79ly1fzwg624h40j31hc0u0x5f.jpg" alt="" /><figcaption>"小姐，请让一下"</figcaption>
+</figure>
+<a id="more"></a>
+<p>朋友们都喜欢拿我小时候写的追捧韩寒的言论揶揄我，每次韩寒的电影上映，总是要问问我咋不写个影评，还记得自己刚上大学那会儿，韩寒的第一部电影《后会无期》刚刚上映，我看完之后激动的不行，离开影院的路上和朋友们津津乐道着电影里的各种桥段；其实我算不上韩寒的忠实读者，我读过的韩寒的书不超过5本，而真正意义上看完的书，也只有那本《1988，我想和这个世界谈谈》，那是我花了一个晚上通宵读完的故事，最开始让我喜欢上韩寒的也不是《三重门》，而是充满荤段子的《光荣日》，纯粹是因为有趣。</p>
+<p>《后会无期》看完之后，我立刻回去看了很多人对电影的讨论和分析，整理了一篇文章来向身边对电影破口大骂的观众解释这部电影的隐喻，然后我就发现这部电影除了隐喻什么也没有，就仿佛寓言故事电影版，我刚出电影院的兴奋，只是因为看到了很多韩寒小说里的场景得到了充分的表现，然而当着一个个场景堆砌起来时，却根本讲不清楚一个故事，这也是非粉丝观众对《后会无期》不卖帐的原因。这点在《乘风破浪》中得到了改进，但邓超和彭于晏的表演好想和韩寒的故事并不合拍。直到最新的这部《飞驰人生》，韩寒和开心麻花产生了奇妙的化学反应。</p>
+<p>如果说《后会无期》是韩寒尝试将自己曾经的作品搬上荧幕，《乘风破浪》是韩寒尝试创作出自己曾经作品风格的影视版本，那么《飞驰人生》算是韩寒真正找到了将自己的文笔风格如何恰到好处的融合进影视语言中的开山之作。</p>
+<p>这次的故事简单明了，一位曾经辉煌一时的车手，一失足成千古恨，如何重返赛场，为了自己所热爱之事付出一切，再次创造辉煌。不得不说，沈腾的表演保证了这部片子的下限，他从一本正经到让人突然捧腹大笑之间的转换没有丝毫尴尬，这是一个喜剧演员的特质，邓超和冯绍峰都做不到。故事的节奏张弛有度，前半段的诙谐幽默，苦中作乐，梦想再度起航的踌躇满志；中间段的为拉赞助的种种糗事到给“大哥”唱歌跳舞，慢慢将节奏由轻松搞笑转移到了辛酸和无奈；最后段的赛车比赛，紧张刺激；张弛飞出赛场那一幕，随着背景音乐响起，导演给了之前每一个出场角色一个镜头，仿佛片中的角色和台下观众一样，一起在目睹张弛冲过巴音布鲁克的终点，飞向太阳。然后影片戛然而止，演员表出，紧接着后面补上一个有趣的彩蛋，张弛和儿子同学的飞行员爸爸比赛，随着“守望先锋”中天使大招的那句“heroes never die”（英雄不朽），一面致敬了坚持所热爱之事的张弛为英雄；一面暗示张弛为梦想献出生命。（游戏中，天使的大招是复活阵亡的队友，此处为孩子的想象，天使复活了爸爸。）</p>
+<p>整体来看，影片给人的节奏感很棒，故事做到流畅完整，结尾点到为止，不说破。（至今，我还记得“1988”中，娜娜的离去，“我”怀里的孩子）。</p>
+<p>说完整体故事节奏，我想具体说一个角色，尹正饰演的孙宇强，5年没有联系，一个电话，便死心塌地的继续跟着张弛干起来，从考驾照、偷赛车、拉赞助、上综艺直到最后的大哥面前的钢管舞，宇强真的是张弛的跟班小弟，在张弛犹豫自己的尊严时，宇强可以为了梦想丝毫不顾形象。我一度认为宇强对这次比赛的执着，是高于张弛的；而电影前半段二人关系的铁，也在反复暗示我，最后会不会有兄弟反目的情节，但是，最后却是宇强车祸摔坏赛车，因伤不能参加比赛，最后张驰的飞驰一越，也说明了，最不想输最执着的人是张弛。一开始，我总感觉这和前面的铺垫不太搭，如果后面安排一段宇强和张弛的戏剧冲突，比如，张弛迫于某些问题要放弃比赛，宇强压抑的情绪爆发，二人不欢而散后重归于好，仿佛更自然。后来，我想起宇强在中间的一段话，大意就是自己一辈子普普通通，只有在赛场上，才找到了活着的意义，这时张弛说：你是没有故事，想给自己一个故事，我是故事太多，想给故事一个结局。在张弛面前，宇强还是年轻太多，这就是为什么在运送赛车时他会那么开心快乐，在车被毁时，他会想着再找大哥“借”钱修车。韩寒设计的宇强这个角色，虽然对比赛很执着，但终究是个能力平平之人，他想要的只是重回赛道，而张弛这个角色，要的不仅仅是重返赛场，更多的是赢得比赛，比赛的胜利高于自己的生命，这也是为什么他很难去和比赛对手求赞助，战胜比赛对手这件事，比他的生命更重要。</p>
+<p>最后，讲讲韩寒的镜头，涉及太专业的不谈，也不懂，只谈谈直观感受，给我印象深刻的几个画面。第一个是考驾照时的飙车戏，这段镜头的剪辑，把赛车的魅力表现的淋漓尽致，各种入弯漂移，赛车疾驰而过掀起的落叶，干净利落，一气呵成。接着二人在ktv唱歌跳舞，张弛将麦克风一杵变成档位的转场，做得颇为惊艳。还有最后巴音布鲁克赛段的整段戏，赛场中英文解说穿插故事人物对话，非常真实又紧张刺激，特别是赛车在野外行驶时车尾的滚滚黄沙，让我想起了小时候的四驱兄弟。。。。而我最喜欢的一个镜头，还是叶经理和张弛在天台的那段戏，二人一上一下，一前一后，时间是傍晚，背景是东方明珠和上海的高楼大厦，当叶经理唱起光辉岁月的时候，张弛愣了一下，然后接着唱起了下句，这里惹得全场观众大笑，但是笑过之后，不免又有些想哭，这首Beyond的《光辉岁月》用在此处真的是恰到好处。随着两人的合唱，对昔日辉煌的追忆，对未来梦想的追求，一首歌后，尽在不言中。</p>
+<p>当然，片子的确有不足之处，人物的设计稍显单薄，本煜饰演的记星，除了秀肌肉的修车戏，好像再没了；儿子这个角色的设计，似乎有些多余，只变成了一个抖包袱的工具，一开始我还以为这会是一条父子情的暗线，看到最后也没有，要不是最后有一个儿子的幻想的彩蛋，儿子这个角色真的显得可有可无。</p>
+<p>总而言之，从《后会无期》到《乘风破浪》再到《飞驰人生》，韩寒的片子越拍越好，其特有的韩式风格也在慢慢定型，他对公路、对赛车的特有情节也反复在其作品中得到体现，但还不足够形成符号，不过，这也是最令我期待的事情，韩寒的片子仍有很多可以提升的地方，明年贺岁档，会更加精彩。</p>
+]]></content>
+      <categories>
+        <category>电影观后感</category>
+      </categories>
+      <tags>
+        <tag>韩寒</tag>
+        <tag>沈腾</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Stream流</title>
     <url>/Stream%E6%B5%81/</url>
     <content><![CDATA[<h1 id="stream流">Stream流</h1>
@@ -977,31 +1002,6 @@ x &amp;= a +b+c+d\\
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.perdant.day19.demo13;</span><br><span class="line"></span><br><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ArrayBuilder</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 创建int类型数组的方法，参数传递数组的长度，返回创建好的int类型数组</span></span><br><span class="line">    <span class="keyword">int</span>[] builderArray(<span class="keyword">int</span> length);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.perdant.day19.demo13;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 方法参数传递创建数组长度和ArrayBuilder接口</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] createArray(<span class="keyword">int</span> length, ArrayBuilder ab)&#123;</span><br><span class="line">        <span class="keyword">return</span> ab.builderArray(length);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 调用createArray方法 Lambda表达式</span></span><br><span class="line">        <span class="keyword">int</span>[] array1 = createArray(<span class="number">10</span>, (len) -&gt; &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">        &#125;);</span><br><span class="line">        System.out.println(array1.length);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 使用方法引用优化 创建的就是int[]  长度也是已知的</span></span><br><span class="line">        <span class="keyword">int</span>[] array2 = createArray(<span class="number">10</span>, <span class="keyword">int</span>[]::<span class="keyword">new</span>);</span><br><span class="line">        System.out.println(array2.length);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>《飞驰人生》</title>
-    <url>/%E9%A3%9E%E9%A9%B0%E4%BA%BA%E7%94%9F/</url>
-    <content><![CDATA[<figure>
-<img src="https://ws2.sinaimg.cn/large/006tNc79ly1fzwg624h40j31hc0u0x5f.jpg" alt="" /><figcaption>"小姐，请让一下"</figcaption>
-</figure>
-<a id="more"></a>
-<p>朋友们都喜欢拿我小时候写的追捧韩寒的言论揶揄我，每次韩寒的电影上映，总是要问问我咋不写个影评，还记得自己刚上大学那会儿，韩寒的第一部电影《后会无期》刚刚上映，我看完之后激动的不行，离开影院的路上和朋友们津津乐道着电影里的各种桥段；其实我算不上韩寒的忠实读者，我读过的韩寒的书不超过5本，而真正意义上看完的书，也只有那本《1988，我想和这个世界谈谈》，那是我花了一个晚上通宵读完的故事，最开始让我喜欢上韩寒的也不是《三重门》，而是充满荤段子的《光荣日》，纯粹是因为有趣。</p>
-<p>《后会无期》看完之后，我立刻回去看了很多人对电影的讨论和分析，整理了一篇文章来向身边对电影破口大骂的观众解释这部电影的隐喻，然后我就发现这部电影除了隐喻什么也没有，就仿佛寓言故事电影版，我刚出电影院的兴奋，只是因为看到了很多韩寒小说里的场景得到了充分的表现，然而当着一个个场景堆砌起来时，却根本讲不清楚一个故事，这也是非粉丝观众对《后会无期》不卖帐的原因。这点在《乘风破浪》中得到了改进，但邓超和彭于晏的表演好想和韩寒的故事并不合拍。直到最新的这部《飞驰人生》，韩寒和开心麻花产生了奇妙的化学反应。</p>
-<p>如果说《后会无期》是韩寒尝试将自己曾经的作品搬上荧幕，《乘风破浪》是韩寒尝试创作出自己曾经作品风格的影视版本，那么《飞驰人生》算是韩寒真正找到了将自己的文笔风格如何恰到好处的融合进影视语言中的开山之作。</p>
-<p>这次的故事简单明了，一位曾经辉煌一时的车手，一失足成千古恨，如何重返赛场，为了自己所热爱之事付出一切，再次创造辉煌。不得不说，沈腾的表演保证了这部片子的下限，他从一本正经到让人突然捧腹大笑之间的转换没有丝毫尴尬，这是一个喜剧演员的特质，邓超和冯绍峰都做不到。故事的节奏张弛有度，前半段的诙谐幽默，苦中作乐，梦想再度起航的踌躇满志；中间段的为拉赞助的种种糗事到给“大哥”唱歌跳舞，慢慢将节奏由轻松搞笑转移到了辛酸和无奈；最后段的赛车比赛，紧张刺激；张弛飞出赛场那一幕，随着背景音乐响起，导演给了之前每一个出场角色一个镜头，仿佛片中的角色和台下观众一样，一起在目睹张弛冲过巴音布鲁克的终点，飞向太阳。然后影片戛然而止，演员表出，紧接着后面补上一个有趣的彩蛋，张弛和儿子同学的飞行员爸爸比赛，随着“守望先锋”中天使大招的那句“heroes never die”（英雄不朽），一面致敬了坚持所热爱之事的张弛为英雄；一面暗示张弛为梦想献出生命。（游戏中，天使的大招是复活阵亡的队友，此处为孩子的想象，天使复活了爸爸。）</p>
-<p>整体来看，影片给人的节奏感很棒，故事做到流畅完整，结尾点到为止，不说破。（至今，我还记得“1988”中，娜娜的离去，“我”怀里的孩子）。</p>
-<p>说完整体故事节奏，我想具体说一个角色，尹正饰演的孙宇强，5年没有联系，一个电话，便死心塌地的继续跟着张弛干起来，从考驾照、偷赛车、拉赞助、上综艺直到最后的大哥面前的钢管舞，宇强真的是张弛的跟班小弟，在张弛犹豫自己的尊严时，宇强可以为了梦想丝毫不顾形象。我一度认为宇强对这次比赛的执着，是高于张弛的；而电影前半段二人关系的铁，也在反复暗示我，最后会不会有兄弟反目的情节，但是，最后却是宇强车祸摔坏赛车，因伤不能参加比赛，最后张驰的飞驰一越，也说明了，最不想输最执着的人是张弛。一开始，我总感觉这和前面的铺垫不太搭，如果后面安排一段宇强和张弛的戏剧冲突，比如，张弛迫于某些问题要放弃比赛，宇强压抑的情绪爆发，二人不欢而散后重归于好，仿佛更自然。后来，我想起宇强在中间的一段话，大意就是自己一辈子普普通通，只有在赛场上，才找到了活着的意义，这时张弛说：你是没有故事，想给自己一个故事，我是故事太多，想给故事一个结局。在张弛面前，宇强还是年轻太多，这就是为什么在运送赛车时他会那么开心快乐，在车被毁时，他会想着再找大哥“借”钱修车。韩寒设计的宇强这个角色，虽然对比赛很执着，但终究是个能力平平之人，他想要的只是重回赛道，而张弛这个角色，要的不仅仅是重返赛场，更多的是赢得比赛，比赛的胜利高于自己的生命，这也是为什么他很难去和比赛对手求赞助，战胜比赛对手这件事，比他的生命更重要。</p>
-<p>最后，讲讲韩寒的镜头，涉及太专业的不谈，也不懂，只谈谈直观感受，给我印象深刻的几个画面。第一个是考驾照时的飙车戏，这段镜头的剪辑，把赛车的魅力表现的淋漓尽致，各种入弯漂移，赛车疾驰而过掀起的落叶，干净利落，一气呵成。接着二人在ktv唱歌跳舞，张弛将麦克风一杵变成档位的转场，做得颇为惊艳。还有最后巴音布鲁克赛段的整段戏，赛场中英文解说穿插故事人物对话，非常真实又紧张刺激，特别是赛车在野外行驶时车尾的滚滚黄沙，让我想起了小时候的四驱兄弟。。。。而我最喜欢的一个镜头，还是叶经理和张弛在天台的那段戏，二人一上一下，一前一后，时间是傍晚，背景是东方明珠和上海的高楼大厦，当叶经理唱起光辉岁月的时候，张弛愣了一下，然后接着唱起了下句，这里惹得全场观众大笑，但是笑过之后，不免又有些想哭，这首Beyond的《光辉岁月》用在此处真的是恰到好处。随着两人的合唱，对昔日辉煌的追忆，对未来梦想的追求，一首歌后，尽在不言中。</p>
-<p>当然，片子的确有不足之处，人物的设计稍显单薄，本煜饰演的记星，除了秀肌肉的修车戏，好像再没了；儿子这个角色的设计，似乎有些多余，只变成了一个抖包袱的工具，一开始我还以为这会是一条父子情的暗线，看到最后也没有，要不是最后有一个儿子的幻想的彩蛋，儿子这个角色真的显得可有可无。</p>
-<p>总而言之，从《后会无期》到《乘风破浪》再到《飞驰人生》，韩寒的片子越拍越好，其特有的韩式风格也在慢慢定型，他对公路、对赛车的特有情节也反复在其作品中得到体现，但还不足够形成符号，不过，这也是最令我期待的事情，韩寒的片子仍有很多可以提升的地方，明年贺岁档，会更加精彩。</p>
-]]></content>
-      <categories>
-        <category>电影观后感</category>
-      </categories>
-      <tags>
-        <tag>韩寒</tag>
-        <tag>沈腾</tag>
-      </tags>
   </entry>
   <entry>
     <title>Java 基础知识</title>
